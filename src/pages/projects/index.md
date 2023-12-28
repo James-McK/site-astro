@@ -16,7 +16,7 @@ blog posts) being generated automatically from markdown using another program I 
 
 ![A screenshot of the homepage of this website](./imgs/website.webp)
 
-[Code here](https://codeberg.org/weird-autumn/pages)
+[Code here](https://codeberg.org/james-mck/pages)
 
 ## 2048 clone
 
