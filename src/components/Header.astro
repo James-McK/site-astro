@@ -1,59 +1,69 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+const places = [
+	{
+		name: "🏡 Home",
+		path: "/"
+	},
+	{
+		name: "🗒️ Blog",
+		path: "/blog"
+	},
+	{
+		name: "🗃️ Projects",
+		path: "/projects"
+	},
+	{
+		name: "💻 Uses",
+		path: "/uses"
+	}
+]
 ---
 
 <header>
+	<h1>James' small space on the web</h1>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-		</div>
-		<div class="social-links">
-
-		</div>
+		{places.map(place => (
+			<a href=`${place.path}` rel="prefetch-intent">{place.name}</a>
+		))}
 	</nav>
 </header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
+<style>
+header {
+	width: 100%;
+	background: var(--surface0);
+	display: flex;
+	justify-content: space-between;
+}
+
+h1 {
+	margin: 0;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	padding: 1rem 2rem;
+	gap: 1rem;
+}
+
+nav a {
+	background: var(--surface1);
+	padding: 0.3rem 1rem;
+	border-radius: 0.5rem;
+	color: var(--text);
+	text-decoration: none;
+	transition-timing-function: cubic-bezier(0.2, 0, 0.2, 1);
+	transition:
+		filter 0.2s,
+		transform 0.15s;
+}
+
+a:hover {
+	filter: brightness(1.1);
+}
+
+nav a:active {
+	transform: scale(0.88);
+}
 </style>
