@@ -1,0 +1,106 @@
+---
+import { Image } from 'astro:assets';
+
+
+interface Props {
+	user: string;
+	name: string;
+	items: Array<{
+		name: string;
+		href: string;
+		textContent: string;
+	}>;
+	image?: {
+		src: ImageMetadata;
+		alt: string;
+	};
+}
+
+const { user, name, items, image } = Astro.props;
+
+const maxLength = items.filter(item => item.name).reduce((max, item) => Math.max(max, item.name.length), 0);
+const textMaxLength = items.filter(item => item.textContent).reduce((max, item) => Math.max(max, item.textContent.length), 0);
+const extraSpaces = 3;
+const dashes = maxLength + textMaxLength + extraSpaces + 1;
+---
+
+<div id="fetch">
+	<pre class="terminal">[{user}]$ fetch</pre>
+	<div id="fetch-row">
+		{ image && <Image id="img" src={image.src} alt={image.alt} /> }
+		<pre class="terminal">
+{name}
+{"-".repeat(dashes)}
+{items.map(item =>
+	<p>{item.name}:{" ".repeat(maxLength - item.name.length + extraSpaces)}<a href={item.href} rel="noopener" target="_blank">{item.textContent}</a></p>
+)}
+		</pre>
+	</div>
+	<pre class="terminal">[{user}]$ <span id="caret">_</span></pre>
+</div>
+
+<style>
+#fetch {
+  background: var(--base);
+  padding: 1rem;
+  border: 2px solid var(--bg-accent);
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+#fetch p {
+	margin: 0;
+}
+
+#fetch a,
+#fetch a:visited {
+	text-decoration: none;
+  color: var(--accent-2);
+}
+
+#fetch a:hover,
+#fetch a:focus {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+.terminal {
+  margin: 0;
+}
+
+#fetch-row {
+  display: flex;
+  flex-direction: row;
+}
+
+#img {
+  width: 10rem;
+  height: 10rem;
+  margin-right: 1rem;
+  margin-left: 0;
+  border-radius: 0.4rem;
+}
+
+#caret {
+  animation: caretToggle 1.5s infinite;
+  opacity: 1;
+}
+
+@keyframes caretToggle {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+</style>
