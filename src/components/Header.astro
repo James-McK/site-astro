@@ -1,29 +1,33 @@
 ---
 const places = [
 	{
-		name: "🏡 Home",
-		path: "/"
+		name: "Home",
+		path: "/",
+		emoji: "🏠"
 	},
 	{
-		name: "🗒️ Blog",
-		path: "/blog"
+		name: "Blog",
+		path: "/blog",
+		emoji: "📝"
 	},
 	{
-		name: "🗃️ Projects",
-		path: "/projects"
+		name: "Projects",
+		path: "/projects",
+		emoji: "🗃️"
 	},
 	{
-		name: "💻 Uses",
-		path: "/uses"
+		name: "Uses",
+		path: "/uses",
+		emoji: "💻"
 	}
 ]
 ---
 
 <header>
-	<h1>James' small space on the web</h1>
+	<h1>💻 James' small space on the web</h1>
 	<nav>
 		{places.map(place => (
-			<a href=`${place.path}` rel="prefetch-intent">{place.name}</a>
+			<a href=`${place.path}` rel="prefetch-intent" aria-label={place.name}>{`${place.emoji} ~${place.path}`}</a>
 		))}
 	</nav>
 </header>
@@ -31,25 +35,27 @@ const places = [
 <style>
 header {
 	width: 100%;
-	background: var(--surface0);
+	background: var(--base);
 	display: flex;
 	justify-content: space-between;
+	padding: 1rem;
+	border-bottom: 1px solid var(--accent);
 }
 
 h1 {
-	margin: 0;
+	margin: auto 0;
 }
 
 nav {
 	display: flex;
 	align-items: center;
-	padding: 1rem 2rem;
+	padding: 0 2rem;
 	gap: 1rem;
 }
 
 nav a {
 	background: var(--surface1);
-	padding: 0.3rem 1rem;
+	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
 	color: var(--text);
 	text-decoration: none;
