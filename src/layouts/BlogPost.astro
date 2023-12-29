@@ -5,33 +5,29 @@ import Layout from './Layout.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, published, updated } = Astro.props;
 ---
 
 <Layout title={title} description={description}>
 	<article>
-		<div class="hero-image">
-			{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+		<div class="title">
+			{
+				published &&
+				(<div class="date">
+					<FormattedDate date={published} />
+					{
+						updated && (
+							<div class="last-updated-on">
+								Last updated on <FormattedDate date={updated} />
+							</div>
+						)
+					}
+				</div>)
+			}
+			<h1>{title}</h1>
+			<hr />
 		</div>
-		<div class="prose">
-			<div class="title">
-				{
-					pubDate &&
-					(<div class="date">
-						<FormattedDate date={pubDate} />
-						{
-							updatedDate && (
-								<div class="last-updated-on">
-									Last updated on <FormattedDate date={updatedDate} />
-								</div>
-							)
-						}
-					</div>)
-				}
-				<h1>{title}</h1>
-				<hr />
-			</div>
-			<slot />
-		</div>
+
+		<slot />
 	</article>
 </Layout>
