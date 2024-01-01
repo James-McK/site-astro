@@ -7,7 +7,7 @@ let name = "James";
 ---
 
 <Layout title="Home">
-  <div id="main-content">
+  <main transition:animate="fade">
     <section id="left-col">
       <AboutTerminal
       user="james@mck"
@@ -40,7 +40,7 @@ let name = "James";
 </Layout>
 
 <style>
-#main-content {
+main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 100%;

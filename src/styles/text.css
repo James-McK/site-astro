@@ -1,0 +1,343 @@
+/* Global variables. */
+:root,
+::backdrop {
+	--border-radius: 5px;
+}
+
+/* Reset box-sizing */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Format headers */
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 2.6rem;
+	margin-top: 3rem;
+}
+
+h3 {
+	font-size: 2rem;
+	margin-top: 3rem;
+}
+
+h4 {
+	font-size: 1.44rem;
+}
+
+h5 {
+	font-size: 1.15rem;
+}
+
+h6 {
+	font-size: 0.96rem;
+}
+
+p {
+	margin: 1.5rem 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol {
+	overflow-wrap: break-word;
+	margin-left: 1.2rem;
+	margin-right: 1.2rem;
+}
+
+/* Fix line height when title wraps */
+h1,
+h2,
+h3 {
+	line-height: 1.1;
+}
+
+/* Reduce header size on mobile */
+@media only screen and (max-width: 720px) {
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	h2 {
+		font-size: 2.1rem;
+	}
+
+	h3 {
+		font-size: 1.75rem;
+	}
+
+	h4 {
+		font-size: 1.25rem;
+	}
+}
+
+/* Format links & buttons */
+a,
+a:visited {
+	color: var(--accent);
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* Set the cursor to '?' on an abbreviation and style the abbreviation to show that there is more information underneath */
+abbr[title] {
+	cursor: help;
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+}
+
+aside,
+details {
+	background-color: var(--mantle);
+	border: 1px solid var(--accent);
+	border-radius: var(--border-radius);
+	margin-bottom: 1rem;
+}
+
+pre {
+	background-color: var(--mantle);
+	border: 1px solid var(--accent);
+	border-left: none;
+	border-right: none;
+}
+
+aside {
+	font-size: 1rem;
+	width: 30%;
+	padding: 0.5rem 1rem;
+	margin-inline-start: 15px;
+	float: right;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-right: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+aside p,
+aside ul,
+aside ol,
+aside h1,
+aside h2,
+aside h3,
+aside h4,
+aside h5,
+aside h6 {
+	margin: 0;
+}
+
+/* Make aside full-width on mobile */
+@media only screen and (max-width: 720px) {
+	aside {
+		width: 100%;
+		float: none;
+		margin-inline-start: 0;
+	}
+}
+
+article h2:first-child,
+section h2:first-child {
+	margin-top: 1rem;
+}
+
+section {
+	border-top: 1px solid var(--accent);
+	border-bottom: 1px solid var(--accent);
+}
+
+/* Don't double separators when chaining sections */
+section + section,
+section:first-child {
+	border-top: 0;
+	padding-top: 0;
+}
+
+section:last-child {
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+
+details {
+	padding: 0.7rem 1rem;
+	margin: 0.5rem 1rem;
+}
+
+summary {
+	cursor: pointer;
+	font-weight: bold;
+	padding: 0.7rem 1rem;
+	margin: -0.7rem -1rem;
+	word-break: break-all;
+}
+
+details[open] > summary + * {
+	margin-top: 0;
+}
+
+details[open] > summary {
+	margin-bottom: 0.5rem;
+}
+
+details[open] > :last-child {
+	margin-bottom: 0;
+}
+
+/* Format tables */
+table {
+	border-collapse: collapse;
+	margin: 1.5rem 1.2rem;
+}
+
+td,
+th {
+	border: 1px solid var(--bg-accent);
+	text-align: start;
+	padding: 0.5rem;
+}
+
+th {
+	background-color: var(--mantle);
+	font-weight: bold;
+}
+
+tr {
+	background-color: var(--base);
+}
+
+tr:nth-child(even) {
+	/* Set every other cell slightly darker. Improves readability. */
+	background-color: var(--mantle);
+}
+
+table caption {
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+}
+
+/* Misc body elements */
+hr {
+	border: none;
+	height: 1px;
+	background: var(--accent);
+	margin: 1rem auto;
+}
+
+mark {
+	padding: 2px 5px;
+	border-radius: var(--border-radius);
+	background-color: var(--accent-2);
+	color: var(--text-inverted);
+}
+
+img,
+video,
+audio {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--border-radius);
+	margin: 0 auto;
+	display: block;
+}
+
+figure {
+	margin: 0;
+	display: block;
+	overflow-x: auto;
+}
+
+figcaption {
+	text-align: center;
+	font-size: 0.9rem;
+	color: var(--text-light);
+	margin-bottom: 1rem;
+}
+
+blockquote {
+	margin-inline-start: 2rem;
+	margin-inline-end: 0;
+	margin-block: 2rem;
+	padding: 0.4rem 0.8rem;
+	border-inline-start: 0.35rem solid var(--accent);
+	color: var(--text-light);
+	font-style: italic;
+}
+
+cite {
+	font-size: 0.9rem;
+	color: var(--text-light);
+	font-style: normal;
+}
+
+/* Use mono font for code elements */
+code,
+pre,
+pre span,
+kbd,
+samp {
+	font-family: var(--mono-font);
+	color: var(--code);
+}
+
+kbd {
+	color: var(--preformatted);
+	border: 1px solid var(--preformatted);
+	border-bottom: 3px solid var(--preformatted);
+	border-radius: var(--border-radius);
+	padding: 0.1rem 0.4rem;
+}
+
+pre {
+	padding: 1rem 1.4rem;
+	max-width: 100%;
+	overflow: auto;
+	color: var(--preformatted);
+}
+
+/* Fix embedded code within pre */
+pre code {
+	color: var(--preformatted);
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Superscript & Subscript */
+/* Prevent scripts from affecting line-height. */
+sup,
+sub {
+	vertical-align: baseline;
+	position: relative;
+}
+
+sup {
+	top: -0.4em;
+}
+
+sub {
+	top: 0.3em;
+}
+
+article {
+	border-top: 1px solid var(--accent);
+	border-bottom: 1px solid var(--accent);
+	padding-top: 1rem;
+}
+
+article + article {
+	border-top: none;
+}

@@ -20,8 +20,6 @@ const { title, description } = Astro.props;
 	</head>
 	<body>
 		<Header transition:persist />
-		<main transition:animate="fade">
-			<slot />
-		</main>
+		<slot />
 	</body>
 </html>

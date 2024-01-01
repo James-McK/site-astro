@@ -1,4 +1,5 @@
 ---
+import "../styles/text.css";
 import type { CollectionEntry } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import Layout from './Layout.astro';
@@ -9,25 +10,36 @@ const { title, description, published, updated } = Astro.props;
 ---
 
 <Layout title={title} description={description}>
-	<article>
+	<main transition:animate="fade">
+
 		<div class="title">
 			{
 				published &&
 				(<div class="date">
-					<FormattedDate date={published} />
-					{
-						updated && (
-							<div class="last-updated-on">
-								Last updated on <FormattedDate date={updated} />
-							</div>
-						)
-					}
+				<FormattedDate date={published} />
+				{
+					updated && (
+						<div class="last-updated-on">
+							Last updated on <FormattedDate date={updated} />
+						</div>
+					)
+				}
 				</div>)
 			}
-			<h1>{title}</h1>
-			<hr />
-		</div>
+		<h1>{title}</h1>
+		<hr />
+	</div>
 
-		<slot />
-	</article>
+	<slot />
+	</main>
 </Layout>
+
+<style>
+main {
+	margin: 1rem auto;
+	width: 95ch;
+	background: var(--base);
+	border: 1px solid var(--accent);
+	border-radius: 0.5rem;
+}
+</style>
