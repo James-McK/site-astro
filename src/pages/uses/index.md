@@ -52,4 +52,3 @@ Here's some of the software I ran when I was using Windows:
 Wallpaper Engine, Rainmeter, Open-Shell (Fluent-Metro skin), Microsoft PowerToys, Notepad++, MusicBee, f.lux, Everything (Voidtools)
 
 ![Screenshot of my previous Windows 10 desktop setup showing some of the software mentioned above - Wallpaper Engine is used for an animated rocket/space-themed background, Rainmeter used to display currently playing music and hardware usage, and the OpenShell menu open.](./imgs/desktop-win10.webp)
-

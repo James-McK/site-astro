@@ -1,13 +1,13 @@
 ---
 title: Blog post for CSC1028
 description: A summary of the project
-published: 2022-03-04 
+published: 2022-03-04
 updated: 2022-03-24
-tags: nodejs, project sonar, programming
 previewImage: ./ElectronUI2.png
 ---
 
 # URL Understanding Tool
+
 This project was created over the course of 10 weeks for my CSC1028 module, and although it is not a fully complete project, it provides a great framework for future work.
 
 ### Aims of the project
@@ -21,16 +21,17 @@ The project has 3 main parts:
 [Code](https://github.com/James-McK/CSC1028APIs)  
 The main component of this project is a set of HTTP APIs that can be queried for information on a URL/IP address to provide information from various sources, from local databases to external APIs.
 The current data sources are:
- - A local MongoDB database containing data from Project Sonar
- - A local MongoDB database containing data on phishing/malware URLs from [Phishtank](https://phishtank.org/), [OpenPhish](https://openphish.com/), [URLHaus](https://urlhaus.abuse.ch/) and [MalwareDiscoverer](https://malwarediscoverer.com/).
- - Earliest page/hostname archive date, from <https://archive.org>.
- - [Similarweb](https://www.similarweb.com/) global website rank
- - IP Geolocation data (Currently from <https://ip-api.com/>, could probably be improved - this section did not have much thought put into it, and was mostly done as a proof of concept)
- - [Stackshare](https://stackshare.io/) data
+
+- A local MongoDB database containing data from Project Sonar
+- A local MongoDB database containing data on phishing/malware URLs from [Phishtank](https://phishtank.org/), [OpenPhish](https://openphish.com/), [URLHaus](https://urlhaus.abuse.ch/) and [MalwareDiscoverer](https://malwarediscoverer.com/).
+- Earliest page/hostname archive date, from <https://archive.org>.
+- [Similarweb](https://www.similarweb.com/) global website rank
+- IP Geolocation data (Currently from <https://ip-api.com/>, could probably be improved - this section did not have much thought put into it, and was mostly done as a proof of concept)
+- [Stackshare](https://stackshare.io/) data
 
 Several of these can also be queried via the command line, i.e. `node queryArchiveDate.js example.com`
 
-For more information on dealing with Project Sonar's data, see [my how-to guide](https://mck.is/project-sonar/), but in summary, the data is stored in a local MongoDB database which, when full, can fill up to 60gb. We then use [text indexes](https://docs.mongodb.com/manual/core/index-text/) to allow *extremely* performant queries to be made.
+For more information on dealing with Project Sonar's data, see [my how-to guide](https://mck.is/project-sonar/), but in summary, the data is stored in a local MongoDB database which, when full, can fill up to 60gb. We then use [text indexes](https://docs.mongodb.com/manual/core/index-text/) to allow _extremely_ performant queries to be made.
 
 Note on Project Sonar's data:
 6 days after I wrote my how-to guide, [Rapid7 switched to requiring you to apply](https://www.rapid7.com/blog/post/2022/02/10/evolving-how-we-share-rapid7-research-data-2/) to access Project Sonar's data. Except now, a few weeks later, it no longer requires an account again, and this time I cannot find any blog post etc. mentioning this change back, so I do not know if this is a permanent or temporary change.
@@ -101,13 +102,14 @@ For getting a free similarweb API key (5000 requests per month), [see here](http
 For getting a free stackshare API key (100 requests per month), [see here](https://www.stackshare.io/api)
 
 Once you've got the API keys you want, you can then create a `.env` file, using the provided `.env.template` file as a template. The result should look something like:
+
 ```
 SIMILARWEB_KEY=abc1234
 STACKSHARE_KEY=abcd
 ```
 
-
 ## Electron App
+
 ![Electron app UI](./ElectronUI2.png)  
 [Code](https://github.com/James-McK/CSC1028ElectronApp)
 
@@ -116,16 +118,19 @@ The electron app provides a user-friendly interface allowing the user to make qu
 Since it is built with electron, the page is little more than a HTML page with some javascript behind it! As a result, all this app has to do is query the back-end HTTP APIs and display the result to the user!
 
 ### Running the application
+
 Assuming you've followed the steps above for running/developing the central node.js app (Which you should have done, as this electron app isn't too useful without it), not much more is required to run the electron app. After opening the folder, you'll need to run `npm install --save-dev electron` to install everything required for electron. You can then run `npm start` to start the app.  
 You might also want to look at <https://www.electronjs.org/docs/latest/tutorial/quick-start/> for an introduction to Electron.
 
 ### Further development
+
 The electron app itself is thankfully not too complex.  
 First, there's the `main.js` file, which is a node.js application that is used to launch the electron browser window itself, which is `index.html`. This just works like a standard web page - the HTML is stored in `index.html`, the CSS in `index.css` (The CSS probably doesn't need to much editing - It's designed to work well with just plain HTML), and the javascript is in `renderer.js`.
 
 The javascript doesn't have to do too much in this case - it only needs to query the Node.js APIs created earlier, and display the results to the user. If you're looking for something to improve in the electron application, I'd suggest this - currently, only the raw data returned is displayed to the user.
 
 ## Browser Addon
+
 ![Basic Addon UI](./BasicAddon.png)  
 [Code](https://github.com/James-McK/CSC1028FFAddon)
 
@@ -137,7 +142,7 @@ The addon's UI is also currently lacking as I chose to shift focus away from it,
 ### Installing the addon
 
 (Currently Firefox-only)  
-Installing the addon is thankfully easy. Navigate to `about:debugging` and click on the "This Firefox" tab. Click on "Load Temporary Add-on..." and navigate to the folder containing the addon files. Click on any of the files (e.g. `manifest.json`) and load it. The addon is now loaded! Whenever you update your code and save it, you just need to click the "Reload" button that appears.  
+Installing the addon is thankfully easy. Navigate to `about:debugging` and click on the "This Firefox" tab. Click on "Load Temporary Add-on..." and navigate to the folder containing the addon files. Click on any of the files (e.g. `manifest.json`) and load it. The addon is now loaded! Whenever you update your code and save it, you just need to click the "Reload" button that appears.
 
 I'd also recommend looking at [MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions) for excellent documentation of the WebExtension APIs.
 
@@ -151,18 +156,18 @@ The backend is stored in `backround.js`, which as the name suggests, runs in the
 
 The front-end is in `popup/urlInfo.html` (This, and the background script file, are determined in `manifest.json`.), which provides a UI similar to the electron app whenever the user clicks on the toolbar button, which queries the cache and displays the data for the user's current tab.
 
-
 ## Improvements and vision
 
 The project in its current state is nowhere near complete, but serves as a foundation to build further upon.
 
 There are many possible new data sources that could be integrated into the project, for example:
- - Crowdsourced datasets, eg Trustpilot and other user-driven sources of metadata
- - What tech stack companies are using, and alert the user to suspicious activity if a different result is actually found, using information from <https://stackshare.io>
- - Further integration with archives, e.g. thumbnails of pages from the [Wayback Machine](https://web.archive.org/) - If a webpage has only existed for a few days its chance of being malware or a phishing attack are higher
- - Data from [Common Crawl](https://commoncrawl.org/) to find sites that point to a given page (They were having [issues with 503 errors](https://groups.google.com/g/common-crawl/c/kEHzXZNu5To) when I last looked into integrating this, although it appears to have been fixed since.)
- - Possibly other sources of data like Mozilla Observatory or Google Lighthouse.
- - Add an extension page to the browser addon providing functionality similar to the electron app, allowing the user to query any URL
- - General improvements to the user experience.
+
+- Crowdsourced datasets, eg Trustpilot and other user-driven sources of metadata
+- What tech stack companies are using, and alert the user to suspicious activity if a different result is actually found, using information from <https://stackshare.io>
+- Further integration with archives, e.g. thumbnails of pages from the [Wayback Machine](https://web.archive.org/) - If a webpage has only existed for a few days its chance of being malware or a phishing attack are higher
+- Data from [Common Crawl](https://commoncrawl.org/) to find sites that point to a given page (They were having [issues with 503 errors](https://groups.google.com/g/common-crawl/c/kEHzXZNu5To) when I last looked into integrating this, although it appears to have been fixed since.)
+- Possibly other sources of data like Mozilla Observatory or Google Lighthouse.
+- Add an extension page to the browser addon providing functionality similar to the electron app, allowing the user to query any URL
+- General improvements to the user experience.
 
 And many other possible sources of interesting metadata!

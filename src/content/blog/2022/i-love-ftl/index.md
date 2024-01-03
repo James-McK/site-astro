@@ -24,6 +24,7 @@ The game also has an amazing soundtrack (+advanced edition soundtrack) by Ben Pr
 To make each run more different, the game also has unlockable ships (8 ships with 3 variants, and 2 more hidden ships with 2 variants each, for a total of a lot of ships), offering several different playstyles and extra challenges.
 
 ## Choices
+
 ![](./FTLChoice.jpg)
 Choices in FTL
 

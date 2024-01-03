@@ -1,6 +1,6 @@
 ---
 title: I kinda like JavaScript
-description:  ... And I wasn't really expecting to.
+description: ... And I wasn't really expecting to.
 published: 2022-01-25
 ---
 

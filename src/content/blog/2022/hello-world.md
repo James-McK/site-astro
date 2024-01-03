@@ -1,6 +1,6 @@
 ---
-title: Hello world!
-description:  What is this blog?
+title: Hello World!
+description: What is this blog?
 published: 2022-01-23
 ---
 

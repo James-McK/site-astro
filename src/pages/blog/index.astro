@@ -1,43 +1,42 @@
 ---
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import Layout from '../../layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => (b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0)
+const posts = (await getCollection("blog")).sort(
+	(a, b) =>
+		(b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0)
 );
 ---
 
 <Layout title="Blog posts" description="Blog posts">
 	<main transition:animate="fade">
 		<section>
-			<ul>{
+			<ul>
+				{
 					posts.map((post) => (
-					<li>
-						<a href={`/blog/${post.slug}/`}>
-							{post.data.previewImage && (
-								<Image src={post.data.previewImage} alt={post.data.title} />
-							)}
-							
-							<h4 class="title">{post.data.title}</h4>
-							{
-								post.data.description && (
-									<p class="description">{post.data.description}</p>
-								)
-							}
+						<li>
+							<a href={`/blog/${post.slug}/`}>
+								{post.data.previewImage && (
+									<Image src={post.data.previewImage} alt={post.data.title} />
+								)}
 
-							{
-								post.data.published && (
+								<h4 class="title">{post.data.title}</h4>
+								{post.data.description && (
+									<p class="description">{post.data.description}</p>
+								)}
+
+								{post.data.published && (
 									<p class="date">
 										<FormattedDate date={post.data.published} />
 									</p>
-								)
-							}
-						</a>
-					</li>
-				))
-			}</ul>
+								)}
+							</a>
+						</li>
+					))
+				}
+			</ul>
 		</section>
 	</main>
 </Layout>

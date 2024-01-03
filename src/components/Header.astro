@@ -3,73 +3,77 @@ const places = [
 	{
 		name: "Home",
 		path: "/",
-		emoji: "🏠"
+		emoji: "🏠",
 	},
 	{
 		name: "Blog",
 		path: "/blog",
-		emoji: "📝"
+		emoji: "📝",
 	},
 	{
 		name: "Projects",
 		path: "/projects",
-		emoji: "🗃️"
+		emoji: "🗃️",
 	},
 	{
 		name: "Uses",
 		path: "/uses",
-		emoji: "💻"
-	}
-]
+		emoji: "💻",
+	},
+];
 ---
 
 <header>
 	<h1>💻 James' small space on the web</h1>
 	<nav>
-		{places.map(place => (
-			<a href=`${place.path}` rel="prefetch-intent" aria-label={place.name}>{`${place.emoji} ~${place.path}`}</a>
-		))}
+		{
+			places.map((place) => (
+				<a href={place.path} rel="prefetch-intent" aria-label={place.name}>
+					{`${place.emoji} ~${place.path}`}
+				</a>
+			))
+		}
 	</nav>
 </header>
 
 <style>
-header {
-	width: 100%;
-	background: var(--base);
-	display: flex;
-	justify-content: space-between;
-	padding: 1rem;
-	border-bottom: 1px solid var(--accent);
-}
+	header {
+		width: 100%;
+		background: var(--base);
+		display: flex;
+		justify-content: space-between;
+		padding: 1rem;
+		border-bottom: 1px solid var(--accent);
+	}
 
-h1 {
-	margin: auto 0;
-}
+	h1 {
+		margin: auto 0;
+	}
 
-nav {
-	display: flex;
-	align-items: center;
-	padding: 0 2rem;
-	gap: 1rem;
-}
+	nav {
+		display: flex;
+		align-items: center;
+		padding: 0 2rem;
+		gap: 1rem;
+	}
 
-nav a {
-	background: var(--surface1);
-	padding: 0.5rem 1rem;
-	border-radius: 0.5rem;
-	color: var(--text);
-	text-decoration: none;
-	transition-timing-function: cubic-bezier(0.2, 0, 0.2, 1);
-	transition:
-		filter 0.2s,
-		transform 0.15s;
-}
+	nav a {
+		background: var(--surface1);
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+		color: var(--text);
+		text-decoration: none;
+		transition-timing-function: cubic-bezier(0.2, 0, 0.2, 1);
+		transition:
+			filter 0.2s,
+			transform 0.15s;
+	}
 
-a:hover {
-	filter: brightness(1.1);
-}
+	a:hover {
+		filter: brightness(1.1);
+	}
 
-nav a:active {
-	transform: scale(0.88);
-}
+	nav a:active {
+		transform: scale(0.88);
+	}
 </style>

@@ -1,45 +1,44 @@
 ---
 import "../styles/text.css";
-import type { CollectionEntry } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
-import Layout from './Layout.astro';
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import Layout from "./Layout.astro";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, published, updated } = Astro.props;
 ---
 
 <Layout title={title} description={description}>
 	<main transition:animate="fade">
-
 		<div class="title">
 			{
-				published &&
-				(<div class="date">
-				<FormattedDate date={published} />
-				{
-					updated && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updated} />
-						</div>
-					)
-				}
-				</div>)
+				published && (
+					<div class="date">
+						<FormattedDate date={published} />
+						{updated && (
+							<div class="last-updated-on">
+								Last updated on <FormattedDate date={updated} />
+							</div>
+						)}
+					</div>
+				)
 			}
-		<h1>{title}</h1>
-		<hr />
-	</div>
 
-	<slot />
+			<h1>{title}</h1>
+			<hr />
+		</div>
+
+		<slot />
 	</main>
 </Layout>
 
 <style>
-main {
-	margin: 1rem auto;
-	width: 95ch;
-	background: var(--base);
-	border: 1px solid var(--accent);
-	border-radius: 0.5rem;
-}
+	main {
+		margin: 1rem auto;
+		width: 95ch;
+		background: var(--base);
+		border: 1px solid var(--accent);
+		border-radius: 0.5rem;
+	}
 </style>
