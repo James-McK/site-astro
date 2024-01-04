@@ -3,6 +3,11 @@ title: How to deal with Project Sonar's data
 description: From the beginning
 published: 2022-02-01
 updated: 2022-03-04
+slug: project-sonar
+tags:
+  - nodejs
+  - project sonar
+  - programming
 ---
 
 ## What is Project Sonar?

@@ -1,7 +1,7 @@
 ---
 title: Uses
 description: Some stuff I use!
-layout: ../../layouts/BlogPost.astro
+noHeader: true
 ---
 
 # Hardware/software I use

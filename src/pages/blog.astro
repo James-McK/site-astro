@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
-import Layout from "../../layouts/Layout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
 const posts = (await getCollection("blog")).sort(
@@ -17,7 +17,7 @@ const posts = (await getCollection("blog")).sort(
 				{
 					posts.map((post) => (
 						<li>
-							<a href={`/blog/${post.slug}/`}>
+							<a href={`/${post.slug}/`}>
 								{post.data.previewImage && (
 									<Image src={post.data.previewImage} alt={post.data.title} />
 								)}

@@ -4,6 +4,11 @@ description: A summary of the project
 published: 2022-03-04
 updated: 2022-03-24
 previewImage: ./ElectronUI2.png
+slug: CSC1028
+tags:
+  - nodejs
+  - project sonar
+  - programming
 ---
 
 # URL Understanding Tool

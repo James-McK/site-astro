@@ -1,7 +1,7 @@
 ---
 title: Projects
 description: A list of most of the projects I've worked on
-layout: ../../layouts/BlogPost.astro
+noHeader: true
 ---
 
 # Projects
