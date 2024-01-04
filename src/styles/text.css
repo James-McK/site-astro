@@ -101,14 +101,14 @@ abbr[title] {
 
 aside,
 details {
-	background-color: var(--mantle);
+	background-color: var(--base-below);
 	border: 1px solid var(--accent);
 	border-radius: var(--border-radius);
 	margin-bottom: 1rem;
 }
 
 pre {
-	background-color: var(--mantle);
+	background-color: var(--base-below);
 	border: 1px solid var(--accent);
 	border-left: none;
 	border-right: none;
@@ -205,13 +205,13 @@ table {
 
 td,
 th {
-	border: 1px solid var(--bg-accent);
+	border: 1px solid var(--base-below-below);
 	text-align: start;
 	padding: 0.5rem;
 }
 
 th {
-	background-color: var(--mantle);
+	background-color: var(--base-below);
 	font-weight: bold;
 }
 
@@ -221,7 +221,7 @@ tr {
 
 tr:nth-child(even) {
 	/* Set every other cell slightly darker. Improves readability. */
-	background-color: var(--mantle);
+	background-color: var(--base-below);
 }
 
 table caption {

@@ -1,13 +1,13 @@
 :root {
-	--base: #24273a;
-	--mantle: #1e2030;
-	--surface0: #363a4f;
-	--surface1: #494d64;
-	--surface2: #5b6078;
+	--base-above-above: #494d64;
+	--base-above: #24273a;
+	--base: #1e2030;
+	--base-below: #181926;
+	--base-below-below: #161320;
 
-	--bg-accent: #161320; /* Black 0 */
 	--text: #cad3f5;
 	--text-inverted: #181926;
+
 	--accent: #ddb6f2; /* Mauve */
 	--accent-2: #96cdfb; /* Blue */
 
@@ -32,7 +32,8 @@ body::before {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background-image: url("/images/background.webp");
+	background-image: url("/images/autumn.webp");
+	filter: brightness(0.5) contrast(1.05) blur(5px);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
