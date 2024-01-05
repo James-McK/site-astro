@@ -1,42 +1,84 @@
 ---
 import { getCollection } from "astro:content";
-import FormattedDate from "../components/FormattedDate.astro";
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
+import "../styles/text.css";
+import PostPreview from "../components/PostPreview.astro";
 
 const posts = (await getCollection("blog")).sort(
 	(a, b) =>
 		(b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0)
 );
+
+const years: number[] = [];
+posts.forEach((post) => {
+	if (
+		post.data.published &&
+		!years.includes(post.data.published.getFullYear())
+	) {
+		years.push(post.data.published.getFullYear());
+	}
+});
 ---
 
 <Layout title="Blog" description="Blog posts">
 	<main transition:animate="fade">
 		<section>
+			{
+				years.map((year) => (
+					<>
+						<h2>{year}'s posts</h2>
+						<ul>
+							{posts
+								.filter((post) => post.data.published?.getFullYear() === year)
+								.map((post) => (
+									<li>
+										<PostPreview post={post} />
+									</li>
+								))}
+						</ul>
+					</>
+				))
+			}
+
+			<h2>Other posts</h2>
 			<ul>
 				{
-					posts.map((post) => (
-						<li>
-							<a href={`/${post.slug}/`}>
-								{post.data.previewImage && (
-									<Image src={post.data.previewImage} alt={post.data.title} />
-								)}
-
-								<h4 class="title">{post.data.title}</h4>
-								{post.data.description && (
-									<p class="description">{post.data.description}</p>
-								)}
-
-								{post.data.published && (
-									<p class="date">
-										<FormattedDate date={post.data.published} />
-									</p>
-								)}
-							</a>
-						</li>
-					))
+					posts
+						.filter((post) => !post.data.published)
+						.map((post) => (
+							<li>
+								<PostPreview post={post} />
+							</li>
+						))
 				}
 			</ul>
 		</section>
 	</main>
+
+	<style>
+		main {
+			margin: 1rem auto;
+			width: 95ch;
+			background: var(--base);
+			border: 1px solid var(--accent);
+			border-radius: 0.5rem;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-content: start;
+			gap: 1rem;
+			margin: 1rem;
+		}
+
+		li {
+			flex: 1 1 20rem;
+			max-width: calc(50% - 1rem);
+		}
+	</style>
 </Layout>

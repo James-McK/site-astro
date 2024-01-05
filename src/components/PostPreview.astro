@@ -1,0 +1,118 @@
+---
+import { Image } from "astro:assets";
+import FormattedDate from "../components/FormattedDate.astro";
+import { getCollection } from "astro:content";
+
+let test = (await getCollection("blog"))[0];
+interface Props {
+	post: typeof test;
+}
+
+const { post } = Astro.props;
+---
+
+<div class="parent">
+	<a href={`/${post.slug}/`}>
+		<div class="preview-container">
+			{
+				post.data.previewImage && (
+					<Image
+						src={post.data.previewImage}
+						alt={post.data.title}
+						class="preview-image"
+					/>
+				)
+			}
+			{!post.data.previewImage && <div class="preview-image no-image" />}
+		</div>
+
+		<h3 class="title">{post.data.title}</h3>
+	</a>
+	{
+		post.data.description && (
+			<p>
+				<i>{post.data.description}</i>
+			</p>
+		)
+	}
+
+	<p>
+		{post.data.published && <FormattedDate date={post.data.published} />}
+		{
+			post.data.updated && (
+				<>
+					(Updated <FormattedDate date={post.data.updated} />)
+				</>
+			)
+		}
+	</p>
+</div>
+
+<style>
+	.parent {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid var(--accent);
+		border-radius: var(--border-radius);
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+	}
+
+	img {
+		object-fit: cover;
+		border-radius: 0;
+	}
+
+	.preview-image {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		transition:
+			filter 0.2s,
+			scale 0.2s;
+	}
+
+	.no-image {
+		background-image: linear-gradient(
+			-80deg,
+			#f5bde6 0% 9%,
+			#c6a0f6 9% 18%,
+			#ed8796 18% 27%,
+			#ee99a0 27% 36%,
+			#f5a97f 36% 45%,
+			#eed49f 45% 54%,
+			#a6da95 54% 63%,
+			#8bd5ca 63% 72%,
+			#91d7e3 72% 81%,
+			#7dc4e4 81% 90%,
+			#8aadf4 90% 100%
+		);
+	}
+
+	.preview-container {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+	}
+
+	.parent:hover .preview-image {
+		filter: brightness(1.1);
+		scale: 1.08;
+	}
+
+	.title {
+		margin: 0;
+		padding: 0.5rem;
+	}
+
+	a {
+		display: block;
+		color: var(--text);
+	}
+
+	p {
+		margin: 0;
+		padding: 0.5rem;
+		padding-top: 0;
+	}
+</style>

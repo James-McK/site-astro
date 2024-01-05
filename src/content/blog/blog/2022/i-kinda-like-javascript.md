@@ -2,6 +2,7 @@
 title: I kinda like JavaScript
 description: ... And I wasn't really expecting to.
 published: 2022-01-25
+previewImage: ./javascript.png
 ---
 
 Recently, as part of one of my university modules, I had to go and learn javascript.
