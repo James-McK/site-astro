@@ -21,10 +21,12 @@ const places = [
 		emoji: "💻",
 	},
 ];
+
+import { SITE_TITLE } from "../consts";
 ---
 
 <header>
-	<h1>[decide what goes here]</h1>
+	<h1>{SITE_TITLE}</h1>
 	<nav>
 		{
 			places.map((place) => (
@@ -48,6 +50,8 @@ const places = [
 
 	h1 {
 		margin: auto 0;
+		font-size: 2rem;
+		line-height: 1;
 	}
 
 	nav {

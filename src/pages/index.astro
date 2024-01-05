@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import AboutTerminal from "../components/AboutTerminal.astro";
 import meImage from "../images/me.webp";
+import { SITE_DOMAIN } from "../consts";
 
 let name = "James";
 ---
@@ -15,8 +16,8 @@ let name = "James";
 				items={[
 					{
 						name: "email",
-						textContent: "james at mck.is",
-						href: "mailto:contact%40mck.is",
+						textContent: `james at ${SITE_DOMAIN}`,
+						href: `mailto:james%40${SITE_DOMAIN}`,
 					},
 					{
 						name: "github",
@@ -26,7 +27,7 @@ let name = "James";
 				]}
 				image={{
 					src: meImage,
-					alt: "A photo of me, wearing a red fleece and bycicle helmet, standing in front of a field at sunset.",
+					alt: "Me wearing a red fleece and bycicle helmet, standing in front of a field at sunset.",
 				}}
 			/>
 		</section>
@@ -35,9 +36,10 @@ let name = "James";
 			<h1>About</h1>
 			<p>
 				Hey 👋<br />
-				I'm {name}, and thanks for visiting my website!<br />
-				I'm a Computer Science student currently busy enjoying my placement year.<br
-				/>
+				I'm {name}, and thanks for visiting my website!
+				<br />
+				I'm a Computer Science student currently busy enjoying my placement year.
+				<br />
 				However, I'm still occasionally finding time to make things and put them
 				online.
 			</p>

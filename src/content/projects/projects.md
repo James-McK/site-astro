@@ -36,7 +36,7 @@ Made for fun to improve on an existing project and gain some more experience wit
 ## CSC1028
 
 The project I created for the CSC1028 module I opted to do, providing all sorts of metadata on a given URL. See my{" "}
-[blog post](https://mck.is/CSC1028/) on it for a lot more info.
+[blog post](/CSC1028/) on it for a lot more info.
 
 ![A screenshot of part of the UI of the project](./imgs/1028.png)
 
