@@ -288,9 +288,9 @@ samp {
 }
 
 kbd {
-	color: var(--preformatted);
-	border: 1px solid var(--preformatted);
-	border-bottom: 3px solid var(--preformatted);
+	color: var(--text);
+	border: 1px solid var(--text);
+	border-bottom: 3px solid var(--text);
 	border-radius: var(--border-radius);
 	padding: 0.1rem 0.4rem;
 }

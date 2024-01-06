@@ -33,12 +33,12 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 #### Syntax
 
 ```markdown
-![Alt text](./full/or/relative/path/of/image)
+![A photo of a happy cow](./misc-imgs/happy-cow.jpg)
 ```
 
 #### Output
 
-![blog placeholder](/blog-placeholder-about.jpg)
+![A photo of a happy cow](./misc-imgs/happy-cow.jpg)
 
 ## Blockquotes
 
@@ -49,13 +49,13 @@ The blockquote element represents content that is quoted from another source, op
 #### Syntax
 
 ```markdown
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
+> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 ```
 
 #### Output
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
+> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 
 ### Blockquote with attribution
