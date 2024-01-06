@@ -14,4 +14,11 @@ export default defineConfig({
 			theme: vscodeCatppuccinMacchiato,
 		},
 	},
+	image: {
+		service: {
+			config: {
+				limitInputPixels: false,
+			},
+		},
+	},
 });
