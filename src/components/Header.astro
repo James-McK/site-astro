@@ -6,14 +6,14 @@ const places = [
 		emoji: "🏠",
 	},
 	{
-		name: "Blog",
-		path: "/blog",
-		emoji: "📝",
-	},
-	{
 		name: "Projects",
 		path: "/projects",
 		emoji: "🗃️",
+	},
+	{
+		name: "Blog",
+		path: "/blog",
+		emoji: "📝",
 	},
 	{
 		name: "Uses",
@@ -22,11 +22,12 @@ const places = [
 	},
 ];
 
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, SITE_TITLE_SHORT } from "../consts";
 ---
 
 <header>
-	<h1>{SITE_TITLE}</h1>
+	<h1 id="site-title">{SITE_TITLE}</h1>
+	<h1 id="site-title-short">{SITE_TITLE_SHORT}</h1>
 	<nav>
 		{
 			places.map((place) => (
@@ -54,8 +55,14 @@ import { SITE_TITLE } from "../consts";
 		line-height: 1;
 	}
 
+	#site-title-short {
+		display: none;
+	}
+
 	nav {
 		display: flex;
+		flex-wrap: wrap;
+		justify-content: right;
 		align-items: center;
 		padding: 0 2rem;
 		gap: 1rem;
@@ -67,6 +74,7 @@ import { SITE_TITLE } from "../consts";
 		border-radius: 0.5rem;
 		color: var(--text);
 		text-decoration: none;
+		white-space: nowrap;
 		transition-timing-function: cubic-bezier(0.2, 0, 0.2, 1);
 		transition:
 			filter 0.2s,
@@ -80,4 +88,32 @@ import { SITE_TITLE } from "../consts";
 	nav a:active {
 		transform: scale(0.88);
 	}
+
+	@media (max-width: 125ch) {
+		header {
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		nav {
+			padding: 0 0.5rem;
+			justify-content: center;
+		}
+	}
+
+	/* I think I prefer the longer title for now, keeping this if I want it to be swapped out later */
+	/* @media (max-width: 40ch) {
+		#site-title {
+			display: none;
+		}
+
+		#site-title-short {
+			display: block;
+		}
+	} */
 </style>

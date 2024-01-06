@@ -64,6 +64,14 @@ posts.forEach((post) => {
 			border-radius: 0.5rem;
 		}
 
+		@media screen and (max-width: calc(95ch + 2rem)) {
+			main {
+				width: calc(100% - 4vw);
+				margin-left: 2vw;
+				margin-right: 2vw;
+			}
+		}
+
 		ul {
 			list-style: none;
 			padding: 0;
@@ -78,7 +86,13 @@ posts.forEach((post) => {
 
 		li {
 			flex: 1 1 20rem;
-			max-width: calc(50% - 1rem);
+			max-width: calc(50% - 0.5rem);
+		}
+
+		@media screen and (max-width: 35rem) {
+			li {
+				max-width: 100%;
+			}
 		}
 	</style>
 </Layout>

@@ -37,8 +37,7 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 {"-".repeat(dashes)}
 {items.map(item =>
 	<p>{item.name}:{" ".repeat(maxLength - item.name.length + extraSpaces)}<a href={item.href} rel="noopener" target="_blank">{item.textContent}</a></p>
-)}
-		</pre>
+)}</pre>
 	</div>
 	<pre class="terminal">[{user}]$ <span id="caret">_</span></pre>
 </div>
@@ -106,6 +105,24 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 		}
 		100% {
 			opacity: 0;
+		}
+	}
+
+	@media (max-width: 600px) {
+		#fetch {
+			font-size: 0.9rem;
+		}
+
+		#img {
+			width: 8rem;
+			height: 8rem;
+		}
+	}
+
+	@media (max-width: 500px) {
+		#fetch-row {
+			flex-direction: column;
+			gap: 0.5rem;
 		}
 	}
 </style>
