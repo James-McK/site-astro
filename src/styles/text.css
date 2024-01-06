@@ -1,9 +1,3 @@
-/* Global variables. */
-:root,
-::backdrop {
-	--border-radius: 5px;
-}
-
 /* Reset box-sizing */
 *,
 *::before,

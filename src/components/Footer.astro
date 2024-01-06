@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import greenTeam from "../images/green-team.svg";
+---
+
+<footer>
+	<p>
+		<small>
+			Made with ❤
+			<br />
+			Website <a href="https://github.com/James-McK/site-astro"
+				>source available on GitHub</a
+			>.
+			<br />
+			<a href="https://512kb.club">
+				<Image src={greenTeam} alt="512kb club member" /></a
+			>
+		</small>
+	</p>
+</footer>
+
+<style>
+	footer {
+		margin: 1rem auto;
+		max-width: 30ch;
+	}
+
+	p {
+		background: var(--base);
+		border: 1px solid var(--accent);
+		border-radius: var(--border-radius);
+		text-align: center;
+		margin: 0;
+		padding: 0.5rem;
+	}
+
+	a,
+	a:visited {
+		color: var(--accent);
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+</style>
