@@ -11,23 +11,17 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<div class="parent">
-	<a href={`/${post.slug}/`}>
-		<div class="preview-container">
-			{
-				post.data.previewImage && (
-					<Image
-						src={post.data.previewImage}
-						alt={post.data.title}
-						class="preview-image"
-					/>
-				)
-			}
-			{!post.data.previewImage && <div class="preview-image no-image" />}
-		</div>
+<a href={`/${post.slug}/`}>
+	<div class="preview-container">
+		{
+			post.data.previewImage && (
+				<Image src={post.data.previewImage} alt="" class="preview-image" />
+			)
+		}
+		{!post.data.previewImage && <div class="preview-image no-image" />}
+	</div>
 
-		<h3 class="title">{post.data.title}</h3>
-	</a>
+	<h3 class="title">{post.data.title}</h3>
 	{
 		post.data.description && (
 			<p>
@@ -46,10 +40,11 @@ const { post } = Astro.props;
 			)
 		}
 	</p>
-</div>
+</a>
 
 <style>
-	.parent {
+	a {
+		color: var(--text);
 		display: flex;
 		flex-direction: column;
 		border: 1px solid var(--accent);
@@ -57,6 +52,7 @@ const { post } = Astro.props;
 		overflow: hidden;
 		width: 100%;
 		height: 100%;
+		text-decoration: none;
 	}
 
 	img {
@@ -95,7 +91,7 @@ const { post } = Astro.props;
 		overflow: hidden;
 	}
 
-	.parent:hover .preview-image {
+	a:hover .preview-image {
 		filter: brightness(1.1);
 		scale: 1.08;
 	}
@@ -103,16 +99,17 @@ const { post } = Astro.props;
 	.title {
 		margin: 0;
 		padding: 0.5rem;
+		text-decoration: 1px underline;
 	}
 
-	a {
-		display: block;
-		color: var(--text);
+	a:hover .title {
+		text-decoration: none;
 	}
 
 	p {
 		margin: 0;
 		padding: 0.5rem;
 		padding-top: 0;
+		text-decoration: none;
 	}
 </style>
