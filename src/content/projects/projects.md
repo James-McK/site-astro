@@ -131,3 +131,27 @@ offer this sort of functionality (eg [pandoc](https://pandoc.org/)), I wanted so
 control over the result.
 
 [WebGenJava code](https://github.com/James-McK/WebGenJava) (Please, don't use it)
+
+## Authorised markov fetch
+
+A script to create a database of posts compatible with the [mstdn-ebooks](https://github.com/Lynnesbian/mstdn-ebooks) or [pleroma-ebooks](https://github.com/ioistired/pleroma-ebooks) -based [markov](https://en.wikipedia.org/wiki/Markov_chain) bots, that supports instances using secure/authorised fetch.
+
+Rather than using ActivityPub outboxes and pretending to be an instance, which [authorised fetch breaks](https://github.com/Lynnesbian/mstdn-ebooks/wiki/Secure-fetch), this script relies on the bot's instance's API to fetch copies of posts.
+
+[Authorised-markov-fetch code](https://github.com/James-McK/authorised-markov-fetch)
+
+## MusicBee installation script for Linux
+
+A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows application) on linux.
+
+- Automatically sets up a wineprefix with the required libraries
+- Downloads and installs the specified version of MusicBee
+- Downloads the DLLs required for playing AAC/M4A files
+- Installs a set of skins
+- Creates an improved XDG Desktop entry
+- Downloads settings so they don't have to be changed from defaults after launching
+- Installs Discordbee and Wine-Discord IPC bridge to allow the song you're currently listening to to be displayed as a status on Discord
+
+[MusicBee install script here, but will likely require some tweaking if you want to use it yourself](https://gist.github.com/James-McK/ef1fba379cb2429083cf76369d0b032a)
+
+![Screenshot of MusicBee running on linux](./imgs/musicbee-linux.png)
