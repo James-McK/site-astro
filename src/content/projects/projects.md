@@ -8,14 +8,6 @@ noHeader: true
 
 A list of most of the projects I've worked on - mostly personal projects, with a few from university.
 
-## Personal website
-
-The website you're currently browsing! Currently built using [Astro](https://astro.build/). You can [read why I picked Astro](/blog/2024/new-site), or [look at how this site has changed over time](/changelog)!
-
-![A screenshot of the home page of this website](../changelog/v2-index.png)
-
-[Website code](https://github.com/james-mck/site-astro)
-
 ## PlanetPhysics
 
 An [n-body](https://en.wikipedia.org/wiki/N-body_problem) physics simulator built for fun as a side project.  
@@ -85,6 +77,14 @@ was still a very fun project to work on
 ![Example output of the program, showing spheres of different sizes and different materials](./imgs/rtWeekend.webp)
 
 [Raytracer code](https://github.com/James-McK/RTWeekend)
+
+## Personal website
+
+The website you're currently browsing! Currently built using [Astro](https://astro.build/). You can [read why I picked Astro](/blog/2024/new-site), or [look at how this site has changed over time](/changelog)!
+
+![A screenshot of the home page of this website](../changelog/v2-index.png)
+
+[Website code](https://github.com/james-mck/site-astro)
 
 ## Particle/powder toy simulator
 
