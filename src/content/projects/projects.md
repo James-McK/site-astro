@@ -142,7 +142,7 @@ Rather than using ActivityPub outboxes and pretending to be an instance, which [
 
 ## MusicBee installation script for Linux
 
-A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows application) on linux.
+A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows application) on linux. I wrote a whole [blog post](/blog/2024/musicbee-on-linux/) on this!
 
 - Automatically sets up a wineprefix with the required libraries
 - Downloads and installs the specified version of MusicBee
@@ -152,6 +152,6 @@ A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows 
 - Downloads settings so they don't have to be changed from defaults after launching
 - Installs Discordbee and Wine-Discord IPC bridge to allow the song you're currently listening to to be displayed as a status on Discord
 
-[MusicBee install script here, but will likely require some tweaking if you want to use it yourself](https://gist.github.com/James-McK/ef1fba379cb2429083cf76369d0b032a)
+[MusicBee install script here](https://gist.github.com/James-McK/6d7fcbbc08f5d18be09f2cc219084675)
 
 ![Screenshot of MusicBee running on linux](./imgs/musicbee-linux.png)
