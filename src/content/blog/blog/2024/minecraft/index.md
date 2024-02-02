@@ -5,13 +5,15 @@ published: 2024-02-02
 previewImage: ./HouseOnCliff.png
 ---
 
-You probably know what Minecraft is, right? That game with the blocks, a 3D sandbox game of a world filled with voxels. But that's not really what it's about, to me at least.
+You probably know what Minecraft is, right? That game with the blocks, a 3D sandbox game of a world filled with voxels.
+
+But that's not really what it's about, to me at least.
 
 It's not about punching a tree to get wood. It's about going over to a friend's house, where you get to play Minecraft splitscreen on their Xbox 360, while they teach you how to play, since you don't even know what most of the buttons do yet.
 
 ![A pocket edition world, with tall, steep cliffs on both sides of a valley filled with water. The distance is extremely foggy.](./mcpe.png)
 
-It's about getting pocket edition, exploring its weird and wonderful world generation, building a house, then going to school to talk about it the next day.
+It's about getting pocket edition, exploring its weird, wonderful world generation, building a house, then going to school to talk about it the next day.
 
 ![The ground is almost completely covered with hundreds of chickens. Some houses are visible in the background.](./Chickens.png)
 
@@ -31,4 +33,4 @@ It's not about beating the ender dragon. It's about Queen's Computing Society ha
 
 I've played Minecraft for thousands of hours now, but only a tiny percent of that has ever been in single-player worlds.
 
-It isn't about Minecraft. Minecraft could have been anything. It's about friends, and the time we spent together.
+It's not about Minecraft. Minecraft could have been anything. It's about friends, and the time we spent together.
