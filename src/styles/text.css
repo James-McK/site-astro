@@ -290,6 +290,7 @@ kbd,
 samp {
 	font-family: var(--mono-font);
 	color: var(--code);
+	font-size: 1rem;
 }
 
 kbd {
