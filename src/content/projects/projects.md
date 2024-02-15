@@ -43,6 +43,8 @@ timer systems also used throughout the game. We worked great as a group, and stu
 
 A theme for the MusicBee music player based on the very nice [Catppuccin](https://github.com/catppuccin/catppuccin) colour palette. Less impressive than most of the other things here, but the one I use most regularly!
 
+Uses a combination of `bash`, `imagemagick`, `xdotool`, `wine`, and `Xvfb` (X virtual framebuffer) to automate creating the 112 different variations of the theme.
+
 ![Screenshot of several versions of the theme, with a range of accent colours and background colours](./imgs/catppuccin-musicbee.webp)
 
 [Catppuccin-MusicBee code and releases](https://github.com/James-McK/Catppuccin-MusicBee)
@@ -95,6 +97,30 @@ enjoyed messing around with this kind of cellular automaton
 
 [PowderSim code](https://github.com/James-McK/ParticleSim)
 
+## Authorised markov fetch
+
+A script to create a database of posts compatible with the [mstdn-ebooks](https://github.com/Lynnesbian/mstdn-ebooks) or [pleroma-ebooks](https://github.com/ioistired/pleroma-ebooks) -based [markov](https://en.wikipedia.org/wiki/Markov_chain) bots, that supports instances using secure/authorised fetch.
+
+Rather than using ActivityPub outboxes and pretending to be an instance, which [authorised fetch breaks](https://github.com/Lynnesbian/mstdn-ebooks/wiki/Secure-fetch), this script relies on the bot's instance's API to fetch copies of posts.
+
+[Authorised-markov-fetch code](https://github.com/James-McK/authorised-markov-fetch)
+
+## MusicBee installation script for Linux
+
+A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows application) on linux. I wrote a whole [blog post](/blog/2024/musicbee-on-linux/) on this!
+
+- Automatically sets up a wineprefix with the required libraries
+- Downloads and installs the specified version of MusicBee
+- Downloads the DLLs required for playing AAC/M4A files
+- Installs a set of skins
+- Creates an improved XDG Desktop entry
+- Downloads settings so they don't have to be changed from defaults after launching
+- Installs Discordbee and Wine-Discord IPC bridge to allow the song you're currently listening to to be displayed as a status on Discord
+
+[MusicBee install script here](https://gist.github.com/James-McK/6d7fcbbc08f5d18be09f2cc219084675)
+
+![Screenshot of MusicBee running on linux](./imgs/musicbee-linux.png)
+
 ## A2 Project
 
 This application was my A2 coursework project for Software Systems Development, written between 10/11/2020 and 14/03/2021 using
@@ -126,32 +152,8 @@ Made for fun to improve on an existing project and gain some more experience wit
 
 ## WebGenJava
 
-The program I wrote to convert markdown to the HTML you're currently viewing. Although there are already existing solutions that
+The program I wrote to convert markdown to HTML for a previous version of this website. Although there are already existing solutions that
 offer this sort of functionality (eg [pandoc](https://pandoc.org/)), I wanted something that gave me slightly more
 control over the result.
 
 [WebGenJava code](https://github.com/James-McK/WebGenJava) (Please, don't use it)
-
-## Authorised markov fetch
-
-A script to create a database of posts compatible with the [mstdn-ebooks](https://github.com/Lynnesbian/mstdn-ebooks) or [pleroma-ebooks](https://github.com/ioistired/pleroma-ebooks) -based [markov](https://en.wikipedia.org/wiki/Markov_chain) bots, that supports instances using secure/authorised fetch.
-
-Rather than using ActivityPub outboxes and pretending to be an instance, which [authorised fetch breaks](https://github.com/Lynnesbian/mstdn-ebooks/wiki/Secure-fetch), this script relies on the bot's instance's API to fetch copies of posts.
-
-[Authorised-markov-fetch code](https://github.com/James-McK/authorised-markov-fetch)
-
-## MusicBee installation script for Linux
-
-A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows application) on linux. I wrote a whole [blog post](/blog/2024/musicbee-on-linux/) on this!
-
-- Automatically sets up a wineprefix with the required libraries
-- Downloads and installs the specified version of MusicBee
-- Downloads the DLLs required for playing AAC/M4A files
-- Installs a set of skins
-- Creates an improved XDG Desktop entry
-- Downloads settings so they don't have to be changed from defaults after launching
-- Installs Discordbee and Wine-Discord IPC bridge to allow the song you're currently listening to to be displayed as a status on Discord
-
-[MusicBee install script here](https://gist.github.com/James-McK/6d7fcbbc08f5d18be09f2cc219084675)
-
-![Screenshot of MusicBee running on linux](./imgs/musicbee-linux.png)
