@@ -291,6 +291,7 @@ samp {
 	font-family: var(--mono-font);
 	color: var(--code);
 	font-size: 1rem;
+	tab-size: 4;
 }
 
 kbd {
