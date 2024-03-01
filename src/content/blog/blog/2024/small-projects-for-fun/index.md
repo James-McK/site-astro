@@ -2,6 +2,7 @@
 title: Prototyping and small projects are fun!
 description: They're also a good excuse to try out new things
 published: 2024-03-02
+previewImage: ./locals.png
 ---
 
 I recently had an idea for a project: I wonder if it's possible for me to display what music I'm currently listening to on my website?  
