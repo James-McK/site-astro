@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Music</title>
+		<meta name="description" content="The music I'm currently listening to" />
+		<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<style>
+			:root {
+				--base: #1e2030;
+				--text: #cad3f5;
+				--accent: #ddb6f2;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: sans-serif;
+				color: var(--text);
+				background-color: #181926;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+
+			music-display {
+				margin: 1rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<music-display
+			nowPlayingApi="https://music-player.mck.is/now-playing"
+			websocketUrl="wss://music-player.mck.is/now-playing-ws">
+		</music-display>
+
+		<script src="https://music-player.mck.is/musicDisplayComponent.js"></script>
+	</body>
+</html>
