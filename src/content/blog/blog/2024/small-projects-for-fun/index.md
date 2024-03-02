@@ -151,6 +151,7 @@ This means all I need to do to add it to any page is:
 <style>
 	music-display {
 		display: flex;
+		--base: #181926;
 	}
 
 	.music-display-container {
