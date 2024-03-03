@@ -1,7 +1,8 @@
 ---
 title: Prototyping and small projects are fun!
 description: They're also a good excuse to try out new things
-published: 2024-03-02
+published: 2024-03-01
+updated: 2024-03-03
 previewImage: ./locals.png
 ---
 
@@ -15,35 +16,41 @@ I recently had an idea for a project: I wonder if it's possible for me to displa
   <script src="https://music-player.mck.is/musicDisplayComponent.js"></script>
 </p>
 
-Why? I think it's fun showing off what music I like, and it sometimes gets friends talking about music!
+Why? It sounded like a nice, short project, I think it's fun showing off what music I like, and I've had it displayed as my discord status for a while now, which gets friends talking about music!
 
 ![hey i know that song](./hey-i-know-that-song.png)
 
-So I started coming up with some ideas for what I'd need to do. I know MusicBee (the music player I normally use) has some sort of plugin system, since it's already how I was sharing what I was listening to on Discord - presumably I should be able to do something similar, just sending the data to my website instead? So I'd also need some sort of basic API to receive the data, then some way to display it on my website. Sounds like a plan!
+So I started thinking over the minimum parts I'd need to get working:
 
-Thankfully the [MusicBee website](https://www.getmusicbee.com/help/api/) has at least some documentaion on how to use the plugin system, the requirements for it (targeting .NET Framework 4.0), and an interface for all the methods it supports.  
-Mildly annoying that it's .NET Framework (which is the version that only runs on windows) as I usually use linux, but I can easily switch to windows for compiling and testing the plugin, it should still run fine through wine later on. (Also getting to use more C# was nice, I've been enjoying it a lot recently)
+- Something on my website to display the currently playing song
+- A server of some sort for me to send what music I'm listening to to
+- Some way to get or send what music I'm playing
 
-Some quick browsing through the provided `MusicBeeApiInterface` and DiscordBee's source code, I found the methods I'd need for getting info about the currently playing song, and how to received notifications when the song changes - it was all pretty nice to use! The only notable thing was it also provided the album art as a base64 encoded string, which I had no idea what I was doing with yet.
+I already knew MusicBee (the music player I normally use on desktop) had some sort of plugin system, since it's already how I was sharing what I was listening to on Discord - presumably I should be able to do something similar, just sending the data to my website instead?
+
+Thankfully the [MusicBee website](https://www.getmusicbee.com/help/api/) has at least some documentaion on the plugin API, the requirements for it (targeting .NET Framework 4.0), and an interface for all the methods it supports.  
+Mildly annoying for me that it's .NET Framework (the version that only runs on windows) as I usually use linux, but I can easily switch to windows for compiling and testing the plugin, it should still run fine through wine later on. (Also getting to use more C# was nice, I've been enjoying it a lot recently!)
+
+Some quick browsing through the provided `MusicBeeApiInterface` and DiscordBee's source code, I found the methods I'd need for getting info about the currently playing song, and how to received notifications when the song changes - it was all pretty nice to use! It also provided the album art as a base64 encoded string, which made it even easier for me to test sending stuff to the server.
 
 ```csharp
-var artist = _mbApiInterface.NowPlaying_GetFileTag(MetaDataType.Artist);
-var title = _mbApiInterface.NowPlaying_GetFileTag(MetaDataType.TrackTitle);
-var album = _mbApiInterface.NowPlaying_GetFileTag(MetaDataType.Album);
-
-var durationMs = _mbApiInterface.NowPlaying_GetDuration();
-var positionMs = _mbApiInterface.Player_GetPosition();
-
-var playState = _mbApiInterface.Player_GetPlayState();
-var albumArt = _mbApiInterface.NowPlaying_GetArtwork();
-
-// ... wrap up into playingData object
+var playingData = new
+{
+	Artist = _mbApiInterface.NowPlaying_GetFileTag(MetaDataType.Artist),
+	Title = _mbApiInterface.NowPlaying_GetFileTag(MetaDataType.TrackTitle),
+	Album = _mbApiInterface.NowPlaying_GetFileTag(MetaDataType.Album),
+	DurationMs = _mbApiInterface.NowPlaying_GetDuration(),
+	PositionMs = _mbApiInterface.Player_GetPosition(),
+	PlayState = _mbApiInterface.Player_GetPlayState(),
+	AlbumArt = _mbApiInterface.NowPlaying_GetArtwork()
+};
 
 using var client = new System.Net.WebClient();
 client.UploadString("http://localhost:3000", "POST", JsonConvert.SerializeObject(playingData));
 ```
 
-For the server, I decided to just quickly throw it together using [Bun](https://bun.sh), since I've found javascript to be perfect for this scale of project. (Bun over NodeJS just because I wanted to try out its `Bun.serve` API, this won't be under enough load for speed to make any difference) To test that the idea worked at all, I told it to just log anything it received.
+For the server, I decided to just quickly throw it together using [Bun](https://bun.sh), since I've found javascript(/typescript) to be perfect for this scale of project. (I chose Bun over NodeJS only because I wanted to try out its `Bun.serve` API, I really hope this server will never be under enough load for any performance differences to matter)  
+To test that the idea worked at all, I told it to just log anything it received.
 
 ```typescript
 Bun.serve({
@@ -65,19 +72,39 @@ Bun.serve({
 });
 ```
 
-So pretty quickly, I had my intial proof of concept working:
-
 <p>
 	<video controls>
 		<source src="/blog/initial-music-prototype.mp4"></source>
 	</video>
 </p>
 
-Neat!
+We've proven the concept!
 
-Now I need to come up with some way to display this on my website. There's a huge range of different ways I could do this (svelte, react, htmx, vue, angular, solid, etc, etc.), but I don't want to have to worry about porting this thing to another framework if (when) I decide to change my website's tech stack.
+But I'm still missing some way to display this on my website. There's so many different toolkits/frameworks/etc. I could pick do this with (svelte, react, htmx, vue, angular, solid, etc, etc.), but to get started I'll just use vanilla JS and CSS, to fetch the data from the server, and update the DOM with it.
 
-To just get started, I used some vanilla JS to fetch the data from the server, and update the DOM with it.
+```javascript
+setInterval(() => {
+	const response = await fetch("http://localhost:3000/now-playing");
+	const playingData = await response.json();
+
+	document.getElementById("albumArt").src = `data:image/png;base64, ${playingData.albumArt}`;
+
+	document.getElementById("songTitle").innerText = playingData.title;
+	document.getElementById("album").innerText = ` - ${playingData.album}`;
+
+	document.getElementById("artist").innerText = playingData.artist;
+
+	let position = document.getElementById("position");
+	position.innerText = new Date(playingData.positionMs).toISOString().substr(14, 5);
+
+	let duration = document.getElementById("duration");
+	duration.innerText = new Date(playingData.durationMs).toISOString().substr(14, 5);
+
+	let progressBar = document.getElementById("progressBar");
+	progressBar.value = playingData.positionMs;
+	progressBar.max = playingData.durationMs;
+}, 10);
+```
 
 <p>
 	<video controls>
@@ -85,25 +112,74 @@ To just get started, I used some vanilla JS to fetch the data from the server, a
 	</video>
 </p>
 
-However this initial solution was a bit too simple - polling the server every 10 milliseconds is more than a bit excessive, but I still want it to update quickly. I'd heard of websockets before but didn't know much about them - after a bit of reading (MDN is fantastic), they seemed pretty much perfect! I can just have the server send the data to the client whenever it changes, and the client can update the DOM then.
+Looking good!
 
-But this meant the progress indicator only updated when the song changed or I manually moved to a different part of the song. `setInterval` to position it would definitely have worked here, but I felt like it'd be more interesting to try to understand CSS animations a bit better. After quite a bit of fiddling around, I figured out that setting a negative `animation-delay` would allow me to position the marker at the currently correct position, and animate over time to the end of the song.
+However this initial solution isn't great - polling the server every 10 milliseconds is more than a bit excessive, but I still want it to update quickly.  
+I'd heard of websockets before but didn't know much about them - after a bit of reading (MDN is fantastic), they seemed pretty much perfect! I can just have the server send the data to the client whenever it changes, and the client can update the DOM then.
+
+```javascript
+const webSocket = new WebSocket("ws://localhost:3000/now-playing-ws");
+
+webSocket.onmessage = (event) => {
+	fullUpdate(JSON.parse(event.data));
+};
+```
+
+But this meant the progress indicator only updated when the song changed or I manually moved to a different part of the song. `setInterval` again to position it would definitely have worked, but I felt like it'd be more interesting to try to understand CSS animations a bit better and animate progress with it instead. After quite a bit of fiddling around, I figured out that setting a negative `animation-delay` would allow me to position the marker at the currently correct position, and animate over time to the end of the song.
 
 ```js
 seekBarPositionMarker.style.animation = `moveRight ${playingData.durationMs}ms linear -${currentPosition}ms forwards`;
 ```
 
-Perfect! With a bit of extra work, the whole thing looks pretty good.
+Perfect! With a bit of extra polish, the whole thing looks pretty good.
+
+![Autumn's Back Again by northh](./autumns-back-again.png)
 
 ![movies for guys by Jane Remover](./movies-for-guys.png)
+
+I decided to try out CSS nesting for this, as of a couple months ago it's [supported in all major browsers](https://caniuse.com/css-nesting). Which helps keep the CSS a bit more organised and readable:
+
+```css
+#artContainer {
+	position: relative;
+	height: 100%;
+	width: var(--albumArtSize);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	#pauseSymbol {
+		width: var(--albumArtSize);
+		height: var(--albumArtSize);
+		filter: drop-shadow(5px 5px 2px var(--base));
+		display: none;
+
+		&.paused {
+			display: block;
+		}
+	}
+
+	#albumArt {
+		width: var(--albumArtSize);
+		max-height: var(--albumArtSize);
+		border-radius: var(--border-radius);
+
+		&.paused {
+			filter: grayscale(70%) brightness(70%);
+		}
+	}
+}
+```
+
+CSS variables are great! I don't see them used often enough.
 
 And then a bit more work after I realised it should probably look good when squished down on mobile too:
 
 ![locals (girls like us) by Underscores](./locals.png)
 
-(CSS grids are really cool! I should use them more often)
+CSS Grid turned out to be a great help for this - I've never actually used it before, but now I have a decent understanding of how they work, and can't wait to use them more.
 
----
+<section>
 
 As a side-note, I found a tiny odd difference between Firefox and Chromium. I was using an SVG for the pause button, and decided to use some css variables to define how rounded the corners should be (`rx="calc(var(--border-radius) / 2)"`).  
 Firefox logs a warning saying `Unexpected value` but still renders it the way I intended:
@@ -116,9 +192,9 @@ While Chromium logs an error and renders it with sharp corners:
 
 I have no idea which one is "correct" (or if there even is an answer to that), but I found it odd since they both support CSS variables for the `fill` without any issues.
 
----
+</section>
 
-I also needed to host this server I'd made somewhere - rather than tying myself to a specific cloud provider and potentially dealing with issues from that in the future, I decided to just host it on the cheapest Hetzner cloud instance. (I've been using their servers for a couple of years now an not had any issues yet, and their stuff is actually reasonably priced)
+I still needed to host this server I'd made somewhere - I decided rather than tying myself to a specific cloud provider and potentially dealing with issues from that in the future, I'd just host it on the cheapest Hetzner cloud instance. (I've been using their servers for a couple of years now an not had any issues yet, and their stuff is actually reasonably priced)
 
 I also decided to use this as a chance to try out NixOS on a server, and use Caddy instead of Nginx for the reverse proxy. I honestly can't beleive how simple this was to set up compared to anything I've done with Nginx in the past, it was just a few lines in my `configuration.nix`:
 
@@ -136,7 +212,7 @@ services.caddy = {
 
 (And then wondering why it wasn't working for a few minutes before realising I'd forgotten about DNS)
 
-The final thing I wanted to do was to make it so I could easily add this to any page on my website, ideally without having to copy and paste a bunch of js and css around. I decided to use a web component for this - I'd used them a little before and even though I feel like their implementation could be quite a bit better, I still really love the idea of them.
+The final thing I wanted to do was to make it so I could easily add this to any page on my website, ideally without having to copy and paste a bunch of JS and CSS around, or having to worry about how to keep the display on my website when I decide to change my website's tech stack in a few years. I landed on using a web component for this - I'd used them a little before and even though I feel like their implementation could be quite a bit better, I still really love the idea of them.
 This means all I need to do to add it to any page is:
 
 ```html
@@ -169,6 +245,6 @@ This means all I need to do to add it to any page is:
 
 And we're done!
 
-Both the [MusicBee plugin](https://github.com/James-McK/PostPublicMusicPlugin) and [server + web component](https://github.com/James-McK/PostPublicMusicReceiver) are open source, so feel free to take a look! You could even host it yourself, if you wanted to for some reason? (I'm not really sure why I did this, so I'm not sure why you would either)
+Both the [MusicBee plugin](https://github.com/James-McK/PostPublicMusicPlugin) and [server + web component](https://github.com/James-McK/PostPublicMusicReceiver) are open source, so feel free to take a look! You can see some of the stuff I skipped over here, like resizing the album art so I'm not trying to POST megabytes of JSON, or adding authentication to the server. You could even host it yourself, if you wanted to for some reason? (I'm not really sure why I did this, so I'm not sure why you would either)
 
-I'm really happy with how this whole project turned out! It went extremely (and unusually) smoothly, I managed to learn quite a bit anyway, and had fun putting the whole thing together.
+I'm really happy with how this whole project turned out! It went extremely (and unusually) smoothly, I managed to learn quite a bit anyway, and had fun putting the whole thing together. I also have some ideas for doing more with this in the future, but I'm also happy calling it "done" in its current state.
