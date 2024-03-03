@@ -3,6 +3,9 @@ title: Minecraft is and isn't
 description: A game I've been playing for about a decade now
 published: 2024-02-02
 previewImage: ./HouseOnCliff.png
+tags:
+  - games
+  - minecraft
 ---
 
 You probably know what Minecraft is, right? That game with the blocks, a 3D sandbox game of a world filled with voxels.

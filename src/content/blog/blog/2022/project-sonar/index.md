@@ -6,9 +6,9 @@ updated: 2022-03-04
 previewImage: ./bg-sonar.jpg
 slug: project-sonar
 tags:
-  - nodejs
-  - project sonar
   - programming
+  - university
+  - javascript
 ---
 
 ## What is Project Sonar?

@@ -3,6 +3,8 @@ title: New year, new site!
 description: Almost two years, actually!
 published: 2024-01-06
 previewImage: ./new-site.png
+tags:
+  - meta
 ---
 
 Whoops, hi again! It's been a bit longer than I meant it to be since my last update to this site or blog post, and I'm here to fix that.

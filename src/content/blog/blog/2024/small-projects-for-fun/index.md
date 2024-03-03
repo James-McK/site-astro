@@ -3,6 +3,10 @@ title: Prototyping and small projects are fun!
 description: They're also a good excuse to try out new things
 published: 2024-03-01
 updated: 2024-03-03
+tags:
+  - musicbee
+  - javascript
+  - programming
 previewImage: ./locals.png
 ---
 

@@ -4,6 +4,10 @@ description: Wine is magic!
 published: 2024-01-26
 updated: 2024-02-02
 previewImage: ./discordbee.png
+tags:
+  - musicbee
+  - linux
+  - programming
 ---
 
 **If you're just wanting a script to install musicbee, see this [installation script](https://gist.github.com/James-McK/6d7fcbbc08f5d18be09f2cc219084675)!** The rest of this blog post is on how I wrote this script.

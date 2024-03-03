@@ -3,6 +3,9 @@ title: "I love FTL: Faster Than Light"
 description: I ramble about a game I like for too long
 published: 2022-01-29
 previewImage: ./FTL.png
+tags:
+	- games
+  - ftl
 ---
 
 This blog post was written to be the content of a page for one of my university modules where we were required to write about something we were interested in, and unlikely to be picked by anybody else. I've decided to stick it up here too, because why not?
