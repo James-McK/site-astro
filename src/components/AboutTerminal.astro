@@ -28,7 +28,7 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 ---
 
 <div id="fetch">
-	<pre class="terminal">[{user}]$ fetch</pre>
+	<pre class="terminal">[{user}]$ fetch-info</pre>
 	<div id="fetch-row">
 		{image && <Image id="img" src={image.src} alt={image.alt} />}
 		<pre
@@ -39,10 +39,22 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 	<p>{item.name}:{" ".repeat(maxLength - item.name.length + extraSpaces)}<a href={item.href} rel="noopener" target="_blank">{item.textContent}</a></p>
 )}</pre>
 	</div>
+	<pre class="terminal">[{user}]$ fetch-current-music</pre>
+	<music-display
+		nowPlayingApi="https://music-player.mck.is/now-playing"
+		websocketUrl="wss://music-player.mck.is/now-playing-ws">
+	</music-display>
 	<pre class="terminal">[{user}]$ <span id="caret">_</span></pre>
 </div>
 
+<script src="https://music-player.mck.is/musicDisplayComponent.js" is:inline
+></script>
+
 <style>
+	music-display {
+		margin: 0 auto;
+	}
+
 	#fetch {
 		background: #24273a7a;
 		padding: 1rem;
