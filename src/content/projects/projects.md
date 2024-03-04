@@ -49,6 +49,29 @@ Uses a combination of `bash`, `imagemagick`, `xdotool`, `wine`, and `Xvfb` (X vi
 
 [Catppuccin-MusicBee code and releases](https://github.com/James-McK/Catppuccin-MusicBee)
 
+## SiteMusicDisplay
+
+A project to display what music I'm currently listening to on my website. Uses a MusicBee plugin written in C# to send the currently playing song to a server, which then sends it to the web component using a websocket.
+
+See the [blog post](/blog/2024/music-display) for more details on this!
+
+<style>
+  music-display {
+    --base: #181926;
+  }
+</style>
+
+<music-display
+  nowPlayingApi="https://music-player.mck.is/now-playing"
+  websocketUrl="wss://music-player.mck.is/now-playing-ws">
+</music-display>
+
+<script src="https://music-player.mck.is/musicDisplayComponent.js" is:inline></script>
+
+![Autumn's back again by northh](../blog/blog/2024/small-projects-for-fun/autumns-back-again.png)
+
+[MusicBee plugin code](https://github.com/James-McK/PostPublicMusicReceiver), [Server/Web component code](https://github.com/James-McK/PostPublicMusicPlugin)
+
 ## Driver
 
 An application I wrote from scratch with several parts:
