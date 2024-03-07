@@ -249,6 +249,16 @@ This means all I need to do to add it to any page is:
 
 And we're done!
 
-Both the [MusicBee plugin](https://github.com/James-McK/PostPublicMusicPlugin) and [server + web component](https://github.com/James-McK/PostPublicMusicReceiver) are open source, so feel free to take a look! You can see some of the stuff I skipped over here, like resizing the album art so I'm not trying to POST megabytes of JSON, or adding authentication to the server. You could even host it yourself, if you wanted to for some reason? (I'm not really sure why I did this, so I'm not sure why you would either)
+Both the [MusicBee plugin](https://github.com/James-McK/PostPublicMusicMusicBeePlugin) and [server + web component](https://github.com/James-McK/PostPublicMusicReceiver) are open source, so feel free to take a look! You can see some of the stuff I skipped over here, like resizing the album art so I'm not trying to POST megabytes of JSON, or adding authentication to the server. You could even host it yourself, if you wanted to for some reason? (I'm not really sure why I did this, so I'm not sure why you would either)
 
 I'm really happy with how this whole project turned out! It went extremely (and unusually) smoothly, I managed to learn quite a bit anyway, and had fun putting the whole thing together. I also have some ideas for doing more with this in the future, but I'm also happy calling it "done" in its current state.
+
+**Update 2024-03-07:**
+
+I've also made a [Poweramp](https://powerampapp.com/) plugin to send the same information to the server, so it also displays what I'm listening to on my phone! ([Poweramp plugin code](https://github.com/James-McK/PostPublicMusicPowerampPlugin))
+
+<p>
+	<video controls>
+		<source src="/blog/mobile.mp4"></source>
+	</video>
+</p>
