@@ -51,7 +51,12 @@ Uses a combination of `bash`, `imagemagick`, `xdotool`, `wine`, and `Xvfb` (X vi
 
 ## SiteMusicDisplay
 
-A project to display what music I'm currently listening to on my website. Uses a MusicBee plugin written in C# to send the currently playing song to a server, which then sends it to the web component using a websocket.
+A project to display what music I'm currently listening to on my website. Has 4 parts:
+
+- A MusicBee plugin written in C# to send the currently playing song to a server (Desktop)
+- A Poweramp plugin/Android app to send the currently playing song to a server (Android)
+- A server written in TypeScript with Bun to receive the currently playing song, and provide an API and/or websocket for the client (Server)
+- A web component written with vanilla JS and CSS to display the currently playing song (Client)
 
 See the [blog post](/blog/2024/music-display) for more details on this!
 
@@ -70,7 +75,9 @@ See the [blog post](/blog/2024/music-display) for more details on this!
 
 ![Autumn's back again by northh](../blog/blog/2024/small-projects-for-fun/autumns-back-again.png)
 
-[MusicBee plugin code](https://github.com/James-McK/PostPublicMusicReceiver), [Server/Web component code](https://github.com/James-McK/PostPublicMusicPlugin)
+- [MusicBee plugin code](https://github.com/James-McK/PostPublicMusicMusicBeePlugin)
+- [Poweramp plugin code](https://github.com/James-McK/PostPublicMusicPowerampPlugin)
+- [Server & web component code](https://github.com/James-McK/PostPublicMusicPlugin)
 
 ## Driver
 
