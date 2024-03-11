@@ -75,9 +75,9 @@ See the [blog post](/blog/2024/music-display) for more details on this!
 
 ![Autumn's back again by northh](../blog/blog/2024/small-projects-for-fun/autumns-back-again.png)
 
-- [MusicBee plugin code](https://github.com/James-McK/PostPublicMusicMusicBeePlugin)
-- [Poweramp plugin code](https://github.com/James-McK/PostPublicMusicPowerampPlugin)
-- [Server & web component code](https://github.com/James-McK/PostPublicMusicPlugin)
+- [MusicBee plugin code](https://github.com/James-McK/MusicDisplayMusicBeePlugin)
+- [Poweramp plugin code](https://github.com/James-McK/MusicDisplayPowerampPlugin)
+- [Server & web component code](https://github.com/James-McK/MusicDisplayServer)
 
 ## Driver
 
