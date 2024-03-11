@@ -67,11 +67,11 @@ See the [blog post](/blog/2024/music-display) for more details on this!
 </style>
 
 <music-display
-  nowPlayingApi="https://music-player.mck.is/now-playing"
-  websocketUrl="wss://music-player.mck.is/now-playing-ws">
+  nowPlayingApi="https://music-display.mck.is/now-playing"
+  websocketUrl="wss://music-display.mck.is/now-playing-ws">
 </music-display>
 
-<script src="https://music-player.mck.is/musicDisplayComponent.js" is:inline></script>
+<script src="https://music-display.mck.is/musicDisplayComponent.js" is:inline></script>
 
 ![Autumn's back again by northh](../blog/blog/2024/small-projects-for-fun/autumns-back-again.png)
 

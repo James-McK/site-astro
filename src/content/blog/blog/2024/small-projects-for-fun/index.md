@@ -14,10 +14,10 @@ I recently had an idea for a project: I wonder if it's possible for me to displa
 (Spoiler: it is! Although it might just say "Currently offline" depending on when you're reading this)
 
 <p class="music-display-container">
-	<music-display nowPlayingApi="https://music-player.mck.is/now-playing" websocketUrl="wss://music-player.mck.is/now-playing-ws">
+	<music-display nowPlayingApi="https://music-display.mck.is/now-playing" websocketUrl="wss://music-display.mck.is/now-playing-ws">
 	</music-display>
 
-  <script src="https://music-player.mck.is/musicDisplayComponent.js"></script>
+  <script src="https://music-display.mck.is/musicDisplayComponent.js"></script>
 </p>
 
 Why? It sounded like a nice, short project, I think it's fun showing off what music I like, and I've had it displayed as my discord status for a while now, which gets friends talking about music!
@@ -206,7 +206,7 @@ I also decided to use this as a chance to try out NixOS on a server, and use Cad
 services.caddy = {
 	enable = true;
 	email = "...";
-	virtualHosts."music-player.mck.is" = {
+	virtualHosts."music-display.mck.is" = {
 		extraConfig = ''
 			reverse_proxy localhost:3000
 		'';
@@ -221,11 +221,11 @@ This means all I need to do to add it to any page is:
 
 ```html
 <music-display
-	nowPlayingApi="https://music-player.mck.is/now-playing"
-	websocketUrl="wss://music-player.mck.is/now-playing-ws">
+	nowPlayingApi="https://music-display.mck.is/now-playing"
+	websocketUrl="wss://music-display.mck.is/now-playing-ws">
 </music-display>
 
-<script src="https://music-player.mck.is/musicDisplayComponent.js"></script>
+<script src="https://music-display.mck.is/musicDisplayComponent.js"></script>
 ```
 
 <style>
@@ -241,10 +241,10 @@ This means all I need to do to add it to any page is:
 </style>
 
 <p class="music-display-container">
-	<music-display nowPlayingApi="https://music-player.mck.is/now-playing" websocketUrl="wss://music-player.mck.is/now-playing-ws">
+	<music-display nowPlayingApi="https://music-display.mck.is/now-playing" websocketUrl="wss://music-display.mck.is/now-playing-ws">
 	</music-display>
 
-  <script src="https://music-player.mck.is/musicDisplayComponent.js"></script>
+  <script src="https://music-display.mck.is/musicDisplayComponent.js"></script>
 </p>
 
 And we're done!
