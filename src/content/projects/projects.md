@@ -58,7 +58,7 @@ A project to display what music I'm currently listening to on my website. Has 4 
 - A server written in TypeScript with Bun to receive the currently playing song, and provide an API and/or websocket for the client (Server)
 - A web component written with vanilla JS and CSS to display the currently playing song (Client)
 
-See the [blog post](/blog/2024/music-display) for more details on this!
+See the [blog post](/blog/2024/small-projects-for-fun/) I wrote for more details on this!
 
 <style>
   music-display {
