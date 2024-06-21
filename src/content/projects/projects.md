@@ -21,6 +21,26 @@ system, a binary star system, and our solar system to scale (with and without mo
 
 [PlanetPhysics code](https://github.com/James-McK/PlanetPhysics)
 
+## weird-fe
+
+This was a very experimental attempt to write my own frontend for akkoma(/anything else supporting the mastodon API)
+
+Made mostly to experiment with whatever ideas I found interesting, which is why the frontend is served as a completely static site, and heavily uses [web components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) for rendering the UI, and is written almost entirely from scratch, relying on as few other libraries as possible
+
+Supports:
+
+- Viewing posts (with attatchments, content warnings, etc)
+- Viewing replies to a post in a threaded view
+- Viewing a user's posts
+- Viewing an instance's federated timeline
+- Emoji reactions
+- Quote posts
+- Akkoma's subset of MFM
+
+![Screenshot of a thread of replies to a post](./imgs/weird-fe.png)
+
+[weird-fe code](https://github.com/James-McK/weird-fe)
+
 ## CSC1028
 
 The project I created for the CSC1028 module I opted to do, providing all sorts of metadata on a given URL. See my [blog post for CSC1028](/CSC1028/) for a lot more info.
