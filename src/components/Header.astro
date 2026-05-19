@@ -2,6 +2,12 @@
 import { Image } from "astro:assets";
 
 import ico from "./ico.png";
+
+const links = [
+	{ to: "/blog", text: "Blog" },
+	{ to: "/projects", text: "Projects" },
+	{ to: "/uses", text: "Uses" },
+];
 ---
 
 <header>
@@ -9,9 +15,25 @@ import ico from "./ico.png";
 
 	<nav>
 		<ul>
-			<li><a href="/blog">Blog</a></li>
-			<li><a href="/projects">Projects</a></li>
-			<li><a href="/uses">Uses</a></li>
+			{
+				links.map((link, index) => {
+					return (
+						<>
+							<li>
+								<span class="wawa" aria-hidden>
+									{link.text}
+								</span>
+								<a href={link.to}>{link.text}</a>
+							</li>
+							{index !== links.length - 1 && (
+								<span class="divider" aria-hidden>
+									∗
+								</span>
+							)}
+						</>
+					);
+				})
+			}
 		</ul>
 	</nav>
 </header>
@@ -22,6 +44,12 @@ import ico from "./ico.png";
 		margin: 0 auto;
 		margin-bottom: 1rem;
 
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+
 		a:has(img),
 		img {
 			height: 2rem;
@@ -29,11 +57,27 @@ import ico from "./ico.png";
 			padding: 0;
 		}
 
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding-left: 1.5rem;
-		padding-right: 1.5rem;
+		.wawa {
+			color: transparent;
+			position: absolute;
+
+			font-weight: bold;
+			pointer-events: none;
+			user-select: none;
+
+			height: 0.1em;
+			background-color: var(--accent);
+			transition:
+				opacity 300ms,
+				transform 300ms;
+			transform: scaleX(0);
+			transform-origin: right;
+
+			&:has(+ a:hover) {
+				transform: scale(1);
+				transform-origin: left;
+			}
+		}
 
 		a {
 			text-decoration: none;
@@ -41,34 +85,10 @@ import ico from "./ico.png";
 			color: transparent;
 
 			transition: color 0.2s ease-out;
-
-			position: relative;
 			padding: 0.1em 0;
 
 			&:hover {
-				text-decoration: none;
 				color: var(--accent);
-
-				&::after {
-					transform: scale(1);
-				}
-			}
-
-			&::after {
-				content: "";
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				height: 0.1em;
-				background-color: var(--accent);
-				opacity: 0;
-				transition:
-					opacity 300ms,
-					transform 300ms;
-				opacity: 1;
-				transform: scaleX(0);
-				transform-origin: center;
 			}
 		}
 	}
@@ -85,11 +105,19 @@ import ico from "./ico.png";
 
 		background-clip: text;
 
-		li:not(:last-child)::after {
-			content: "∗";
+		li {
+			display: flex;
+			flex-direction: column-reverse;
+		}
+
+		.divider {
 			margin: 0 0.3rem;
 			font-weight: bold;
 			color: var(--text);
+			pointer-events: none;
+			user-select: none;
+			margin-top: 0.1rem;
+			margin-bottom: -0.1rem;
 		}
 	}
 </style>
