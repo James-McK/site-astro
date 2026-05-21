@@ -110,12 +110,17 @@ function yearNotYetAdded(years: number[], post: any) {
 				svg {
 					width: 2rem;
 					height: 2rem;
+					transition: transform 0.2s ease-out;
+					&:hover {
+						transform: scale(1.1) rotate(3deg);
+					}
 				}
 			}
 		}
 
 		@media screen and (max-width: calc(95ch + 2rem)) {
-			body, body::before {
+			body,
+			body::before {
 				width: 100% !important;
 				border: 0;
 				margin-left: 0;
