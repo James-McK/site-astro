@@ -2,7 +2,7 @@ import { type envType, setCurrentDir } from "../data";
 import { printTermLine } from "../terminal";
 import { tryParsePath, getObjAtPath } from "./jsh";
 
-export default async function cd(env: envType, path: string) {
+export default async function cd(_env: envType, path: string) {
 	// special case for cd with no arguments, go to home
 	if (!path) path = "/home/autumn";
 

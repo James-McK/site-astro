@@ -1,7 +1,7 @@
 import { type envType } from "../data";
 import { printRawHTML } from "../terminal";
 
-export default async function fetchMusic(env: envType) {
+export default async function fetchMusic(_env: envType) {
 	printRawHTML(
 		`<music-display
 			nowPlayingApi="https://music-display.mck.is/now-playing"

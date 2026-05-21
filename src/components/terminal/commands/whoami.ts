@@ -4,7 +4,7 @@ import { checkOptionsFromArgs, type optionType } from "./jsh";
 
 const fetchInfoCopy = document.getElementById("fetch-row")!.cloneNode(true);
 
-export default async function whoAmI(env: envType, ...args: string[]) {
+export default async function whoAmI(_env: envType, ...args: string[]) {
 	const availableOptions = [
 		{ name: "help", long: "--help", short: "", takesArg: false },
 		{ name: "version", long: "--version", short: "", takesArg: false },

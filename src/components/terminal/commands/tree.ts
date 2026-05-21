@@ -7,7 +7,7 @@ import {
 	type optionType,
 } from "./jsh";
 
-export default async function tree(env: envType, ...args: string[]) {
+export default async function tree(_env: envType, ...args: string[]) {
 	const availableOptions = [
 		{ name: "help", long: "--help", short: "", takesArg: false },
 		{ name: "version", long: "--version", short: "", takesArg: false },

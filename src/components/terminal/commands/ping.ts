@@ -2,7 +2,7 @@ import { type envType } from "../data";
 import { printTermLine } from "../terminal";
 import { checkOptionsFromArgs, type optionType } from "./jsh";
 
-export default async function ping(env: envType, ...args: string[]) {
+export default async function ping(_env: envType, ...args: string[]) {
 	const availableOptions = [
 		{ name: "help", long: "", short: "-h", takesArg: false },
 		{ name: "version", long: "", short: "-V", takesArg: false },
@@ -22,11 +22,11 @@ export default async function ping(env: envType, ...args: string[]) {
 
 	if (options.help) {
 		printTermLine(`Usage
-  ping [options] &lt;destination&gt;
+  ping [options] <destination>
 
 Options:
-  &lt;destination&gt;  DNS name
-  -c &lt;count&gt;     stop after &lt;count&gt; replies
+  <destination>  DNS name
+  -c <count>     stop after <count> replies
   -h             print help and exit
   -V             print version and exit`);
 		return 0;

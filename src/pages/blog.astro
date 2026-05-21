@@ -5,26 +5,15 @@ import "../styles/text.css";
 import PostPreview from "../components/PostPreview.astro";
 import RssIcon from "../components/RssIcon.astro";
 
+type Post = Awaited<ReturnType<typeof getCollection>>[number];
+
 const posts = (await getCollection("markdownPosts"))
 	.sort((a, b) => compareByPublishDate(a, b))
 	.filter((post) => post.data.public);
 
-const years: number[] = [];
-posts.forEach((post) => {
-	if (yearNotYetAdded(years, post)) {
-		years.push(post.data.published!.getFullYear());
-	}
-});
-
-export function compareByPublishDate(a: any, b: any) {
+export function compareByPublishDate(a: Post, b: Post) {
 	return (
 		(b.data.published?.valueOf() ?? 0) - (a.data.published?.valueOf() ?? 0)
-	);
-}
-
-function yearNotYetAdded(years: number[], post: any) {
-	return (
-		post.data.published && !years.includes(post.data.published.getFullYear())
 	);
 }
 ---

@@ -5,13 +5,13 @@ export const terminal = document.getElementById("terminalContent")!;
 
 export function printTermLine(text: string) {
 	const pre = document.createElement("pre");
-	pre.innerHTML = text;
+	pre.textContent = text;
 	terminal.appendChild(pre);
 	terminal.scrollTop = terminal.scrollHeight;
 }
 
 /**
- * only use this one if you're sure, printTermLine already sets the innerHTML
+ * only use this one if you're sure
  */
 export function printRawHTML(html: string) {
 	const div = document.createElement("div");
