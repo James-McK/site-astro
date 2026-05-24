@@ -47,8 +47,7 @@ li > p {
 /* criss cross */
 @media screen and (max-width: calc(120ch + 2rem)) {
   .project {
-    flex-direction: column;
-    gap: 0;
+    flex-direction: column-reverse;
   }
 }
 
@@ -325,7 +324,7 @@ I designed and wrote the majority of the CSS for the layout, along with the temp
 
 <h2 id="powdertoy">SandSim</h2>
 
-<div class="even">
+<div class="project even">
   <div class="description">
 
 A small particle/powder toy simulator. Very basic - its flaws are definitely noticeable if you're looking for them, however it's still a lot of fun to mess around with, seeing how much just a few simple rules can create!
