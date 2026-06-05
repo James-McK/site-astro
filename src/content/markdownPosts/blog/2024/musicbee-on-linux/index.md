@@ -10,7 +10,7 @@ tags:
   - programming
 ---
 
-**If you're just wanting a script to install musicbee, see this [installation script](https://gist.github.com/autumn-mck/6d7fcbbc08f5d18be09f2cc219084675)!**. It will likely be more up-to-date than this blog post is. Be careful when running scripts you find on the internet.
+**If you're just wanting a script to install musicbee, see this [installation script](https://gist.github.com/autumn-mck/6d7fcbbc08f5d18be09f2cc219084675)!** It will likely be more up-to-date than this blog post is. Be careful when running scripts you find on the internet.
 
 When I was using Windows, [MusicBee](https://getmusicbee.com/) was easily my favourite music player - for its customizability, how feature-rich it felt, and for me to as easily as possible play music the way I want to play it (either by artist or by album).
 
