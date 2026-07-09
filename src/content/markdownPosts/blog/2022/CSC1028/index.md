@@ -5,11 +5,9 @@ published: 2022-03-04
 updated: 2022-03-24
 previewImage: ./ElectronUI2.png
 id: CSC1028
-tags:
-  - programming
-  - university
-  - javascript
 ---
+
+**Note:** This blog post is several years old - I hope you can still find something useful in it, but take anything here with a heavy pinch of salt! It was written when I knew even less than I do now :)
 
 # URL Understanding Tool
 

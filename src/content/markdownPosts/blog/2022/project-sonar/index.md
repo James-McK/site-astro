@@ -5,20 +5,15 @@ published: 2022-02-01
 updated: 2022-03-04
 previewImage: ./bg-sonar.jpg
 id: project-sonar
-tags:
-  - programming
-  - university
-  - javascript
 ---
 
-Note: I no longer have a copy of project sonar's data lying around, please don't email me to ask (even if you claim to be part of a "cyber security team in my government"). Also, there might be a better way of doing what I've done in this post - this was admittedly just documenting the first way I discovered.
+**Note:** This blog post is several years old - I hope you can still find something useful in it, but take anything here with a heavy pinch of salt! It was written when I knew even less than I do now :)
+
+Shortly after writing this post, [Rapid7 switched to requiring you to apply](https://www.rapid7.com/blog/post/2022/02/10/evolving-how-we-share-rapid7-research-data-2/) to access Project Sonar's data. I also no longer have a copy of project sonar's data lying around, please don't email me to ask (even if you claim to be part of a "cyber security team in my government", from the same email address you've also used for BF).
 
 ## What is Project Sonar?
 
 [Project Sonar](https://opendata.rapid7.com/) is a data collection project containing information from scans across the internet: DNS records, SSL Certificates, and also scans of many commonly used ports with TCP/UDP.
-
-Update: 6 days after this guide was originally posted, [Rapid7 switched to requiring you to apply](https://www.rapid7.com/blog/post/2022/02/10/evolving-how-we-share-rapid7-research-data-2/) to access Project Sonar's data. Except now, a few weeks later (01/03/2022), it no longer requires an account again, and this time I cannot find any blog post etc. mentioning this change back, so I do not know if this is a permanent or temporary change.  
-Update on 28/03/22: This appears to be a permanent change. See <https://opendata.rapid7.com/about/> to apply for access.
 
 ### Why should you use it?
 
@@ -29,8 +24,6 @@ It can also be used for subdomain enumeration (Finding subdomains under the give
 The port scans can also be used to guess at what software a server is running and publicly exposed.
 
 ## Project Sonar's data
-
-I'll also explain a bit about what data Project Sonar contains:
 
 #### Forward DNS (FDNS)
 
@@ -60,7 +53,8 @@ Same as the above TCP scans, but with [UDP](https://en.wikipedia.org/wiki/User_D
 
 Contains data on certificates used for securing HTTPS connections.
 
-## Setup
+<details>
+<summary>Setup - skip unless you're a complete beginner</summary>
 
 To start, you're going to want to be using an IDE - I'd recommend [Visual Studio Code](https://code.visualstudio.com/). This guide is written assuming you're using VS Code, but everything will still work if you choose a different IDE. It's also assuming you've not used Node.js before - if you have, you might want to skip to [Start Programming](#start-programming). Finally, all the code for this guide is also [available here](https://github.com/autumn-mck/ProjectSonarTutorial)!
 
@@ -71,6 +65,8 @@ Once you have one of these installed (Note: On windows, you may have to restart 
 We're also going to be using MongoDB - I used a local installation for this tutorial. To install it, follow the instructions over at <https://docs.mongodb.com/manual/installation/>. MongoDB compass might be installed along side it, but if not, I'd recommend installing it too - it's a useful tool for inspecting your databases.
 
 Returning to VS Code, we can open up its built in terminal with `ctrl + '`. We're going to need a few external packages later, so we might as well install them now. First up, we'll generate the package.json file (Where information like what packages your program depends on is stored), by running `npm init`. `npm` stands for Node Package Manager, and is how you can install external packages (Like the MongoDB Node.js Driver) to use in your program. `npm init`'s defaults are probably good enough, however you can change them if you wish. Next up, open the `package.json` file that was created, and add the line `"type": "module",` below the description line - This marks our program as using the newer `import ... from ...` syntax instead of the older `var ... = require(...)` syntax. Be aware that some tutorials still make use of the old syntax, however. Finally, run `npm install mongodb` and `npm install tldts-experimental` to install the packages that we need.
+
+</details>
 
 ## Start programming
 
@@ -215,9 +211,7 @@ if (res.statusCode === 200) {
 	console.log(`Redirecting to: ${res.headers.location}`);
 	readFromWeb(client, res.headers.location);
 } else {
-	console.log(
-		`Download request failed, response status: ${res.statusCode} ${res.statusMessage}`
-	);
+	console.log(`Download request failed, response status: ${res.statusCode} ${res.statusMessage}`);
 }
 ```
 
@@ -226,8 +220,7 @@ This function gets a [read stream](https://nodejs.org/api/stream.html#stream) - 
 Now we can return to our main method and add in something to call our new function
 
 ```js
-const dataUrl =
-	"https://opendata.rapid7.com/sonar.fdns_v2/2022-01-28-1643328400-fdns_a.json.gz";
+const dataUrl = "https://opendata.rapid7.com/sonar.fdns_v2/2022-01-28-1643328400-fdns_a.json.gz";
 readFromWeb(client, dataUrl);
 ```
 
@@ -291,10 +284,7 @@ Now we need to start thinking about MongoDB. Whilst MongoDB is fast, it is unfor
 Back in our main function, let's add a line to create this text index.
 
 ```js
-await client
-	.db("test_db")
-	.collection("sonardata")
-	.createIndex({ domainWithoutSuffix: "text" });
+await client.db("test_db").collection("sonardata").createIndex({ domainWithoutSuffix: "text" });
 ```
 
 You can call your database and collection whatever you want - this is just what I'm using. We're using the domain without the suffix as our index, as that's what I'm wanting to query later on. If, however, you wanted to query IP address, to find out which domains point to a given IP address, you'd use it as your text index instead.
@@ -356,16 +346,8 @@ async function parseSonar(client, readstream) {
 Nearly done now! We just need to add the `createManyListings` function. Thankfully, it's pretty simple:
 
 ```js
-async function createManyListings(
-	client,
-	newListing,
-	collection,
-	dbName = "test_db"
-) {
-	client
-		.db(dbName)
-		.collection(collection)
-		.insertMany(newListing, { ordered: false });
+async function createManyListings(client, newListing, collection, dbName = "test_db") {
+	client.db(dbName).collection(collection).insertMany(newListing, { ordered: false });
 }
 ```
 
@@ -421,18 +403,8 @@ To explain what the query actually means:
 We could continue to further narrow this down if we wanted (For more info, see <https://docs.mongodb.com/manual/tutorial/query-documents/>). First though, we need to add in the `findMany` function that we're calling.
 
 ```js
-async function findMany(
-	client,
-	query,
-	collection,
-	db_name = "test_db",
-	maxResults = 500
-) {
-	const cursor = client
-		.db(db_name)
-		.collection(collection)
-		.find(query)
-		.limit(maxResults);
+async function findMany(client, query, collection, db_name = "test_db", maxResults = 500) {
+	const cursor = client.db(db_name).collection(collection).find(query).limit(maxResults);
 
 	const results = await cursor.toArray();
 
