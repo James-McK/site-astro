@@ -34,9 +34,7 @@ export const envVars = {
 	SHELL: "/bin/bash",
 	LANG: "en_GB.UTF-8",
 	DISPLAY: ":0",
-	TERM: `xterm-${
-		navigator.userAgent.includes("Firefox") ? "firefox" : "chromium"
-	}`,
+	TERM: `xterm-${navigator.userAgent.includes("Firefox") ? "firefox" : "chromium"}`,
 	"?": "0",
 } as Record<string, string>;
 

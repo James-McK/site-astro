@@ -69,7 +69,7 @@ In the last few years I've made a bunch of projects, both to learn, and for the 
 <div class="project odd">
   <div class="description">
     <h2 id="gnss-war-room">GNSS "War Room"</h2>
-    
+
 ![Photo showing several windows, including a map of the earth with the locations of satellites overlaid, and other extracted statistics.](./imgs/cpsl.avif)
 
 Visualising GNSS (Global Navigation Satellite System) data at QUB's Cyber Physical Systems Lab.
@@ -141,6 +141,7 @@ An experimental attempt to write my own frontend for [Akkoma](https://akkoma.soc
 - Akkoma's subset of [MFM](https://misskey-hub.net/en/docs/for-users/features/mfm/)
 
   </div>
+
 <div class="preview">
 
 ![Screenshot of a thread of replies to a post](./imgs/weird-fe.avif)
@@ -355,6 +356,7 @@ A script to automate setting up [MusicBee](https://getmusicbee.com/) (A Windows 
 - Installs Discordbee and Wine-Discord IPC bridge to allow the song you're currently listening to to be displayed as a status
 
   </div>
+
 </div>
 
 <h2 id="a2-project">A2 Project</h2>

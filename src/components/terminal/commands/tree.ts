@@ -1,11 +1,6 @@
 import { type envType } from "../data";
 import { printTermLine } from "../terminal";
-import {
-	checkOptionsFromArgs,
-	tryParsePath,
-	getObjAtPath,
-	type optionType,
-} from "./jsh";
+import { checkOptionsFromArgs, tryParsePath, getObjAtPath, type optionType } from "./jsh";
 
 export default async function tree(_env: envType, ...args: string[]) {
 	const availableOptions = [
@@ -25,11 +20,7 @@ export default async function tree(_env: envType, ...args: string[]) {
 		// { name: "json", long: "", short: "-J", takesArg: false },
 	] as optionType[];
 
-	const parsedParts = await checkOptionsFromArgs(
-		args,
-		availableOptions,
-		"tree"
-	);
+	const parsedParts = await checkOptionsFromArgs(args, availableOptions, "tree");
 
 	if (!parsedParts) return 2;
 
@@ -64,11 +55,7 @@ export default async function tree(_env: envType, ...args: string[]) {
 	return 0;
 }
 
-async function treeDir(
-	path: string,
-	options: Record<string, string | boolean>,
-	level = 1
-) {
+async function treeDir(path: string, options: Record<string, string | boolean>, level = 1) {
 	const levelLimit = parseInt(options.levelLimit as string) || Infinity;
 	path = tryParsePath(path);
 	const obj = getObjAtPath(path);
@@ -87,25 +74,15 @@ async function treeDir(
 		}
 		const isLast = i === items.length - 1;
 		const connector = isLast ? "└──" : "├──";
-		const pathPrefix = (options.fullPathPrefix ? `${path}/` : "").replace(
-			"//",
-			"/"
-		);
+		const pathPrefix = (options.fullPathPrefix ? `${path}/` : "").replace("//", "/");
 		let nameToPrint = `${pathPrefix}${itemName}`;
 		if (options.quoteFileNames) nameToPrint = `"${nameToPrint}"`;
 		tree += `\n${connector} ${nameToPrint}`;
 
-		if (
-			typeof item === "object" &&
-			Object.keys(item).length > 0 &&
-			level < levelLimit
-		) {
+		if (typeof item === "object" && Object.keys(item).length > 0 && level < levelLimit) {
 			const newPath = `${path}/${itemName}`;
 			const isLastDir = i === items.length - 1;
-			const indented = await indentTree(
-				await treeDir(newPath, options, level + 1),
-				isLastDir
-			);
+			const indented = await indentTree(await treeDir(newPath, options, level + 1), isLastDir);
 			tree += `\n${indented}`;
 		}
 	}

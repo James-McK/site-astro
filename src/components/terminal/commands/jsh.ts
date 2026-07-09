@@ -12,7 +12,7 @@ export type optionType = {
 export async function checkOptionsFromArgs(
 	args: string[],
 	availableOptions: optionType[],
-	command: string
+	command: string,
 ) {
 	const options = {} as Record<string, string | boolean>;
 	const nonOptionArgs = [] as string[];
@@ -44,9 +44,7 @@ export async function checkOptionsFromArgs(
 		} else if (arg.startsWith("-")) {
 			const shortOptions = arg.slice(1).split("");
 			for (const shortOption of shortOptions) {
-				const option = availableOptions.find(
-					(opt) => opt.short === `-${shortOption}`
-				);
+				const option = availableOptions.find((opt) => opt.short === `-${shortOption}`);
 
 				if (!option) {
 					printTermLine(`${command}: unrecognized option '-${shortOption}'`);
@@ -102,11 +100,7 @@ export function getObjAtPath(path: string) {
 }
 
 export function tryGetCommandPath(env: envType, command: string) {
-	if (
-		command.startsWith("/") ||
-		command.startsWith(".") ||
-		command.startsWith("~")
-	) {
+	if (command.startsWith("/") || command.startsWith(".") || command.startsWith("~")) {
 		return tryParsePath(command);
 	}
 

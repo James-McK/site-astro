@@ -148,11 +148,7 @@ function createMouseDownHandler(window: X12Window) {
 	};
 }
 
-function moveWindow(
-	window: X12Window,
-	mouseStart: position,
-	windowStart: position
-) {
+function moveWindow(window: X12Window, mouseStart: position, windowStart: position) {
 	const onMouseMove = (e: MouseEvent) => {
 		const x = windowStart.x + e.clientX - mouseStart.x;
 		const y = windowStart.y + e.clientY - mouseStart.y;

@@ -208,11 +208,7 @@ function generatePasswords(generateChar: number = 0, soFar: string = "") {
 }
 
 generatePasswords();
-console.log(
-	"Generated",
-	passwords.length,
-	"passwords passing the 'hash' check"
-);
+console.log("Generated", passwords.length, "passwords passing the 'hash' check");
 ```
 
 Only around 0.3% of passwords pass this check, but that still leaves us with 263,137 passwords to check! A few too many to do manually, but making some assumptions about what characters are unlikely to be in the decoded output, we can narrow it down to a single option:

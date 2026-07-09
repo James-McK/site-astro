@@ -36,18 +36,4 @@ export const commands = {
 	}
 >;
 
-export {
-	ls,
-	echo,
-	cat,
-	cd,
-	pwd,
-	help,
-	clear,
-	ping,
-	whoAmI,
-	tree,
-	env,
-	fetchMusic,
-	which,
-};
+export { ls, echo, cat, cd, pwd, help, clear, ping, whoAmI, tree, env, fetchMusic, which };

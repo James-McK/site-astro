@@ -1,11 +1,6 @@
 import { type envType } from "../data";
 import { printTermLine, printImage } from "../terminal";
-import {
-	checkOptionsFromArgs,
-	tryParsePath,
-	getObjAtPath,
-	type optionType,
-} from "./jsh";
+import { checkOptionsFromArgs, tryParsePath, getObjAtPath, type optionType } from "./jsh";
 
 export default async function cat(_env: envType, ...args: string[]) {
 	const availableOptions = [
@@ -56,9 +51,7 @@ Concatenate FILE(s) to standard output.
 
 	const files = args;
 	if (files.length === 0) {
-		printTermLine(
-			"cat: No files specified\n(will handle reading from stdin in the future)"
-		);
+		printTermLine("cat: No files specified\n(will handle reading from stdin in the future)");
 		return 1;
 	}
 
@@ -70,10 +63,7 @@ Concatenate FILE(s) to standard output.
 	return 0;
 }
 
-async function catFile(
-	options: Record<string, string | boolean>,
-	file: string
-) {
+async function catFile(options: Record<string, string | boolean>, file: string) {
 	const imageExtensions = ["jpg", "jpeg", "png", "gif", "webp", "avif"];
 	const fullFilePath = tryParsePath(file);
 
@@ -106,10 +96,7 @@ async function catFile(
 	return 0;
 }
 
-async function catText(
-	text: string,
-	options: Record<string, string | boolean>
-) {
+async function catText(text: string, options: Record<string, string | boolean>) {
 	let lineNum = 1;
 	let lastLineWasBlank = false;
 

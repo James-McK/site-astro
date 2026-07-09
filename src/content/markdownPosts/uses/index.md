@@ -19,9 +19,7 @@ I've been running Linux as my desktop for 6 or so years now! I'm really happy wi
 
 Most of it is pretty standard, but there's a few extras like using [krohnkite](https://codeberg.org/anametologin/Krohnkite) for tiling windows, and a fork of [LightlyShaders](https://github.com/autumn-mck/LightlyShaders) I maintain, for nice rounded window corners.
 
-
 ![3 windows tiled with 2 on the right, 1 on the left](./imgs/desktop-kde-krohnkite.png)
-
 
 I've been using Arch Linux for years now and love it, it's provided a reliable rolling base for me to build on in any way I've needed. I tried NixOS for a couple years and while I love it, it's ultimately not for me. My VPS is still running NixOS though, and it's been fantastic for that!
 

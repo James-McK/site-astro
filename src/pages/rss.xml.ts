@@ -10,7 +10,7 @@ import { getImage } from "astro:assets";
 const markdownParser = new MarkdownIt();
 
 const imagesGlob = import.meta.glob<{ default: ImageMetadata }>(
-	"/src/content/**/*.{jpeg,jpg,png,gif,avif,webp,svg}" // add more image formats if needed
+	"/src/content/**/*.{jpeg,jpg,png,gif,avif,webp,svg}", // add more image formats if needed
 );
 
 export async function GET(context: AstroGlobal) {
@@ -40,17 +40,12 @@ export async function GET(context: AstroGlobal) {
 				const imagePathPrefix = `/src/content/markdownPosts/${post.id}/${prefixRemoved}`;
 
 				// call the dynamic import and return the module
-				const imagePath = await imagesGlob[imagePathPrefix]?.()?.then(
-					(res) => res.default
-				);
+				const imagePath = await imagesGlob[imagePathPrefix]?.()?.then((res) => res.default);
 
 				if (imagePath) {
 					const optimizedImg = await getImage({ src: imagePath });
 					// set the correct path to the optimized image
-					img.setAttribute(
-						"src",
-						context.site + optimizedImg.src.replace("/", "")
-					);
+					img.setAttribute("src", context.site + optimizedImg.src.replace("/", ""));
 				}
 			}
 		}

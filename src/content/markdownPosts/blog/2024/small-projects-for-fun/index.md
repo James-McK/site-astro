@@ -222,7 +222,8 @@ This means all I need to do to add it to any page is:
 ```html
 <music-display
 	nowPlayingApi="https://music-display.mck.is/now-playing"
-	websocketUrl="wss://music-display.mck.is/now-playing-ws">
+	websocketUrl="wss://music-display.mck.is/now-playing-ws"
+>
 </music-display>
 
 <script src="https://music-display.mck.is/musicDisplayComponent.js"></script>

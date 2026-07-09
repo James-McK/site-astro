@@ -10,11 +10,7 @@ export default async function whoAmI(_env: envType, ...args: string[]) {
 		{ name: "version", long: "--version", short: "", takesArg: false },
 	] as optionType[];
 
-	const parsedParts = await checkOptionsFromArgs(
-		args,
-		availableOptions,
-		"whoami"
-	);
+	const parsedParts = await checkOptionsFromArgs(args, availableOptions, "whoami");
 
 	if (!parsedParts) return 2;
 

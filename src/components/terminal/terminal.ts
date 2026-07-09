@@ -44,8 +44,7 @@ function getWindowTitle() {
 
 function getDirForTitle() {
 	let currentDir = getCurrentDir();
-	if (currentDir.startsWith("/home/autumn"))
-		currentDir = currentDir.replace("/home/autumn", "~");
+	if (currentDir.startsWith("/home/autumn")) currentDir = currentDir.replace("/home/autumn", "~");
 	if (currentDir === "/") return "/";
 
 	return currentDir;
@@ -63,9 +62,7 @@ async function tryRunCommand(command: string) {
 	const path = tryGetCommandPath(commandEnvVars, cmd as string);
 
 	if (!path) {
-		printTermLine(
-			`bash: ${cmd}: command not found.\nRun 'help' for a list of available commands.`
-		);
+		printTermLine(`bash: ${cmd}: command not found.\nRun 'help' for a list of available commands.`);
 
 		return 127;
 	}

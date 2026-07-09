@@ -6,7 +6,7 @@ export default async function fetchMusic(_env: envType) {
 		`<music-display
 			nowPlayingApi="https://music-display.mck.is/now-playing"
 			websocketUrl="wss://music-display.mck.is/now-playing-ws">
-		</music-display>`
+		</music-display>`,
 	);
 
 	return 0;

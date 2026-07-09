@@ -1,11 +1,6 @@
 import { type envType, type Directory } from "../data";
 import { printTermLine } from "../terminal";
-import {
-	checkOptionsFromArgs,
-	getObjAtPath,
-	tryParsePath,
-	type optionType,
-} from "./jsh";
+import { checkOptionsFromArgs, getObjAtPath, tryParsePath, type optionType } from "./jsh";
 
 export default async function ls(_env: envType, ...args: string[]) {
 	const availableOptions = [

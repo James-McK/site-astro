@@ -9,11 +9,7 @@ export default async function ping(_env: envType, ...args: string[]) {
 		{ name: "count", long: "", short: "-c", takesArg: true },
 	] as optionType[];
 
-	const parsedParts = await checkOptionsFromArgs(
-		args,
-		availableOptions,
-		"ping"
-	);
+	const parsedParts = await checkOptionsFromArgs(args, availableOptions, "ping");
 
 	if (!parsedParts) return 2;
 
@@ -55,9 +51,7 @@ Options:
 		await fetch(`https://${address}`, { mode: "no-cors" })
 			.then(() => {
 				const end = performance.now();
-				printTermLine(
-					`64 bytes from ${address}: icmp_seq=${i + 1} time=${end - start} ms`
-				);
+				printTermLine(`64 bytes from ${address}: icmp_seq=${i + 1} time=${end - start} ms`);
 			})
 			.catch((e) => {
 				console.error(e);
