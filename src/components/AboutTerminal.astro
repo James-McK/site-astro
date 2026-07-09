@@ -61,8 +61,7 @@ const dashes = maxLength + textMaxLength + extraSpaces + 1;
 {name}
 {"-".repeat(dashes)}
 {items.map(item =>
-<>
-	{item.name}:{" ".repeat(maxLength - item.name.length + extraSpaces)}{item.href && <a href={item.href} rel="noopener" target="_blank">{item.textContent}</a>}{!item.href && <span>{item.textContent}</span>}<br /></>
+<>{item.name}:{" ".repeat(maxLength - item.name.length + extraSpaces)}{item.href && <a href={item.href} rel="noopener" target="_blank">{item.textContent}</a>}{!item.href && <span>{item.textContent}</span>}<br /></>
 )}</pre>
 			</div>
 			<pre class="noscript-hide">[{user} ~]$ fetch-music</pre>
