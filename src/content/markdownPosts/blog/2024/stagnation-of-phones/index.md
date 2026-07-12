@@ -26,13 +26,13 @@ Phone bezels haven't been pushed out much further - screens have been about as c
 
 These days, software is a much more important part of how photos look. The cameras themselves still have about the same resolution, although improvements like a larger sensor and optical zoom can still be made. They definitely have continued to improve over time, but my 7t is still more than capable enough for whatever random photos I feel like taking.
 
-![Photo of a dirt lane, with trees overhead, and lilac flowers either side of the lane](./7t-photo-1.jpg)
+![Photo of a dirt lane, with trees overhead, and lilac flowers either side of the lane](./7t-photo-1.avif)
 
-![Close-up photo of ice crystals](./7t-photo-2.jpg)
+![Close-up photo of ice crystals](./7t-photo-2.avif)
 
 Compared to photos from the flip 4, I really can't tell if it's better or not? If I'm having to pixel peep to find any differences then they must be pretty negligible. Both can take fantastic photos, which is more than good enough for me!
 
-![Photo of the flowerbeds in front of the palm house in Botanic Gardens, Belfast](./flip4-photo-1.jpg)
+![Photo of the flowerbeds in front of the palm house in Botanic Gardens, Belfast](./flip4-photo-1.avif)
 
 (It bothers me that the flowerbed in this photo is off-centre, I'll try to retake it this summer)
 
@@ -58,7 +58,7 @@ CPU and GPU performance and memory have kept increasing, but none of it enables 
 
 My 5 year old phone is still perfectly capable of displaying everything smoothly at 90Hz, with no hitches or slowdowns. Maybe these specs still matter if you're playing some intensive 3d game on your phone, but the only mobile games I've wanted to play have been Slay the Spire and Dead Cells (Both aamzing games! and ported well to mobile)
 
-![Dead cells screenshot, the start of the ramparts on mobile](./dead-cells.png)
+![Dead cells screenshot, the start of the ramparts on mobile](./dead-cells.avif)
 
 ### Other
 
@@ -70,11 +70,11 @@ Even the need for storage has significantly slowed down - the base 128gb my 7t c
 
 Thanks to all the volunteers who contribute to [LineageOS](https://lineageos.org/), my phone from 5 years ago runs Android 14, and the most recent security patch.
 
-![Running Android 14 with the April 2024 security update](./android-14.png)
+![Running Android 14 with the April 2024 security update](./android-14.avif)
 
 As a side-note, the look of stock android has really grown on me. Its much more frequent use of material UI and overall design just feel comfy to me.
 
-![Screenshot of LineageOS 20's notification shade, accented green](./android-notification-shade.png)
+![Screenshot of LineageOS 20's notification shade, accented green](./android-notification-shade.avif)
 
 Compared to the updates from OnePlus themselves, which:
 

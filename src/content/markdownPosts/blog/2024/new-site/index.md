@@ -2,7 +2,7 @@
 title: New year, new site!
 description: Almost two years, actually!
 published: 2024-01-06
-previewImage: ./new-site.png
+previewImage: ./new-site.avif
 tags:
   - meta
 ---
@@ -11,7 +11,7 @@ Whoops, hi again! It's been a bit longer than I meant it to be since my last upd
 
 ## New site
 
-![Screenshot of the main page of the current site design](./new-site.png)
+![Screenshot of the main page of the current site design](./new-site.avif)
 
 The new site is built with [Astro](https://astro.build/), and... that's pretty much it actually! I enjoy keeping my site pretty minimal, and the extra flexibility writing my own CSS gives me.  
 Why astro?

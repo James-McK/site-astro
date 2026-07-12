@@ -2,7 +2,7 @@
 title: "I love FTL: Faster Than Light"
 description: I ramble about a game I like for too long
 published: 2022-01-29
-previewImage: ./FTL.png
+previewImage: ./FTL.avif
 ---
 
 I originally wrote this blog post as the content of a page for one of my university modules, but I've decided to stick it here too!
@@ -12,7 +12,7 @@ I had planned for this to be a list of some of my favourite indie games, but it 
 
 ## FTL: Faster Than Light
 
-![](./FTL.png)
+![](./FTL.avif)
 
 <center><i>I should probably have put out those fires...</i></center>
 
@@ -30,7 +30,7 @@ To make each run more different, the game also has unlockable ships (8 ships wit
 
 ## Choices
 
-![](./FTLChoice.jpg)
+![](./FTLChoice.avif)
 
 <center><i>Choices in FTL</i></center>
 
@@ -53,7 +53,7 @@ FTL is one of the few games I've properly obsessed over - I can't recommend it e
 
 ## FTL: Multiverse
 
-![](./Multiverse.png)
+![](./Multiverse.avif)
 
 Finally, the game has some amazing mods, particularly FTL: Multiverse. (The base game is good enough that I put over 100 hours into the vanilla game before looking at mods, but I recommend you try some out eventually). It essentially acts as a sequel, building significantly on the vanilla game - everything from significantly expanding the base game's atmospheric world building, to completely overhauling many mechanics of the base game and adding a lot of new content, and 20 new great music tracks to the vanilla's already stellar soundtrack. It essentially overhauls, expands, or refurbishes nearly every aspect of the game, whether it's ships, crew, events, weapons, etc. while still feeling balanced, and retaining what made the original game so great.
 

@@ -9,7 +9,7 @@ previewImage: ./picture.avif
 
 I'm looking into replacing my current laptop (a lenovo ideapad 5 14are05) as the 8gb of RAM I bought it with is beginning to become a limitation, and I've had to be actively keeping an eye on memory usage when trying to do anything more intensive. Although it's been a fantastic laptop and otherwise I've liked it a lot, I don't like having to keep an eye on memory usage, so the memory not being upgradable is now become an issue for me.
 
-![Photo of the laptop, open and running NixOS, from the front](./picture.jpg)
+![Photo of the laptop, open and running NixOS, from the front](./picture.avif)
 
 So now that I've pretty much finished using it as a laptop (I'll very likely attempt to repurpose it into a server at some point), I felt like writing an overview of its specs and how I found using it, to me understand what I've liked about it and what I want from a laptop.
 
@@ -35,9 +35,9 @@ At 60Hz it's not any smoother than any of the rest of my monitors, but given the
 
 The hinges are well enough built, with the screws securing them in place fairly well spread out. (They're badly labelled as M2.5xL5.5, but at least some thought went into that!). The display cable doesn't seem to have worn out and the hinges are still good after 4 years of use, so I'm happy to call this aspect well designed! (Although unfortunately does take two hands to effectively open)
 
-![](./left-hinge.jpg)
+![](./left-hinge.avif)
 
-![](./right-hinge.jpg)
+![](./right-hinge.avif)
 
 ## Storage
 
@@ -82,7 +82,7 @@ Keyboard - has been pretty good! Not fantastic, but I've done a lot of typing on
 
 Overall construction - feels well built and solid. The metal top feels and looks nice, I like how small and off to the side the logo is (although I'd prefer none at all, as somebody who doesn't enjoy paying a company money to advertise their products). The bottom half is some kind of plastic, but feels surprisingly decent, and has held up so far over time.
 
-![Photo of the laptop from a side angle](./picture2.jpg)
+![Photo of the laptop from a side angle](./picture2.avif)
 
 # Software
 
@@ -98,6 +98,6 @@ I'm really glad I bought it when I did - I loved it when it was new, and for the
 
 Since I got a student discount when buying it, it was also an amazing price at £414. For that, there was nothing else available at the time that really came close.
 
-![£345 plus £69 VAT for £414 total](./price.png)
+![£345 plus £69 VAT for £414 total](./price.avif)
 
 I am slightly sad to be replacing it, but I have plans to use it for other things so I'll still have it around. It's been a great laptop!

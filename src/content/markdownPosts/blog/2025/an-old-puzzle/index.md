@@ -2,7 +2,7 @@
 title: Decoding a 20-Year-Old Puzzle
 description: Deobfuscating and deciphering
 published: 2025-07-31
-previewImage: ./preview.png
+previewImage: ./preview.avif
 ---
 
 Yesterday I was at a workshop on [web penetration testing](https://indico.cern.ch/event/1560038/attachments/3088048/5517717/2025%20web%20pentesting%20-%20summer%20student%20workshop.pdf) for CERN summer students; although I'd covered most of the content myself previously, the exercises were a lot of fun to work through! The extra puzzle at the end especially hooked me:
@@ -13,7 +13,7 @@ Yesterday I was at a workshop on [web penetration testing](https://indico.cern.c
 >
 > (I found this puzzle public on the Web - I don't know who's the author, so I can't credit them. The steps to solve the puzzle proposed in part Hint and Solution are mine - there could be other ways to solve it.)"
 
-![Screenshot of a page containing a text box asking for a password to be entered, with a button labeled "Go!"](page.png)
+![Screenshot of a page containing a text box asking for a password to be entered, with a button labeled "Go!"](page.avif)
 
 ## Stop!
 

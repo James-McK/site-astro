@@ -3,7 +3,7 @@ title: Blog post for CSC1028
 description: A summary of the project
 published: 2022-03-04
 updated: 2022-03-24
-previewImage: ./ElectronUI2.png
+previewImage: ./ElectronUI2.avif
 id: CSC1028
 ---
 
@@ -57,7 +57,7 @@ You can then run `npm start` to start the APIs (This command then calls `node ./
 ### Testing plan
 
 The easiest way to ensure the node.js APIs are working is to start the application by running `npm start` and querying them in your browser. For example, to query the archive date API, which is hosted on port 10133, you'd visit `http://localhost:10133/example.com` .  
-![Example output from the API](./DebuggingAPI.png)
+![Example output from the API](./DebuggingAPI.avif)
 
 I've found that the best way to debug it is to make thorough use of `console.log(...);` to make sure I know the state of variables over time, which is extremely useful in helping to detect any issues.
 
@@ -113,7 +113,7 @@ STACKSHARE_KEY=abcd
 
 ## Electron App
 
-![Electron app UI](./ElectronUI2.png)  
+![Electron app UI](./ElectronUI2.avif)  
 [Code](https://github.com/autumn-mck/CSC1028ElectronApp)
 
 The electron app provides a user-friendly interface allowing the user to make queries regarding any URL, and displays the data to the user in a better format than the entirely raw JSON, however further steps should be taken as the current presentation is still not easily readable.
@@ -134,7 +134,7 @@ The javascript doesn't have to do too much in this case - it only needs to query
 
 ## Browser Addon
 
-![Basic Addon UI](./BasicAddon.png)  
+![Basic Addon UI](./BasicAddon.avif)  
 [Code](https://github.com/autumn-mck/CSC1028FFAddon)
 
 The browser addon is extremely similar to the electron app, providing a user-friendly front end to the data, built with HTML and javascript. As it is integrated into the browser, it can automatically fetch and cache data as the user navigates the web.  
@@ -149,7 +149,7 @@ Installing the addon is thankfully easy. Navigate to `about:debugging` and click
 
 I'd also recommend looking at [MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions) for excellent documentation of the WebExtension APIs.
 
-![Loading the addon](./LoadingAddon.png)
+![Loading the addon](./LoadingAddon.avif)
 
 ### Further development
 

@@ -74,6 +74,6 @@ As a final step, I can export the container's vscode to my host system to make i
 distrobox-export --app /usr/share/applications/code-oss.desktop # from within the container
 ```
 
-![Screenshot showing VSCode with a working venv, thinking it's in an Arch Linux system, alongside a display showing the system is running NixOS](distrobox.png)
+![Screenshot showing VSCode with a working venv, thinking it's in an Arch Linux system, alongside a display showing the system is running NixOS](distrobox.avif)
 
 Was there some other way to solve this? Almost certainly. But I didn't have time to find it, and this works for now. And that's it! A bodged and janky, but working, solution.

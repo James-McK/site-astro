@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import { compile } from "@catppuccin/vscode";
 
@@ -25,10 +25,6 @@ export default defineConfig({
 		},
 	},
 	image: {
-		service: {
-			config: {
-				limitInputPixels: false,
-			},
-		},
+		service: passthroughImageService(),
 	},
 });

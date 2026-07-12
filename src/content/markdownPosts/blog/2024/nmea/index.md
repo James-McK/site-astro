@@ -58,7 +58,7 @@ SMA: A type of coaxial connector, used to connect the antenna to the receiver.
 
 ArduSimple simpleGNSS: The receiver I'm using for this guide and my final year project, as it's cheap and easy to use. Other products are available.
 
-![Photo of the receiver](./receiver.jpg)
+![Photo of the receiver](./receiver.avif)
 
 Baud rate: The rate at which bits are expected to be transmitted over a serial connection.
 

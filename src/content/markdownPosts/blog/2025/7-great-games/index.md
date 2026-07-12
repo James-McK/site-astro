@@ -39,7 +39,7 @@ A platformer and puzzle metroidvania. You find secrets. You keep finding secrets
 
 Released: 2024, playtime: 19.1 hours
 
-![A bunch of polygonal cats fishing in a lake](fishing.jpg)
+![A bunch of polygonal cats fishing in a lake](fishing.avif)
 
 A chatroom with a multiplayer fishing minigame attached - If you've ever used chatrooms before, you know the experience! The vibe of the game really preselected people with similar interests to me - I've never had people identify what my username is a reference to before, and everybody I met was fun to talk to. These cats gay! Good for them.
 
@@ -57,7 +57,7 @@ oh my god it's the cutest thing ever i love both of them so much they're the bes
 
 Released: 2020, playtime: 18 minutes
 
-![An almost photo of a supermarket aisle, with the text "Or rather, a bag of milk inside a bag of milk inside..."](milk.png)
+![An almost photo of a supermarket aisle, with the text "Or rather, a bag of milk inside a bag of milk inside..."](milk.avif)
 
 A game about buying milk, and mental illness. It's short. It's good. Play milk outside a bag of milk outside a bag of milk too.
 

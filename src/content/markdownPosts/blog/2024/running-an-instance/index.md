@@ -3,7 +3,7 @@ title: "Running a fediverse instance: The technical side is the easy bit"
 description: People are a lot more difficult
 published: 2024-07-18
 updated: 2024-11-26
-previewImage: ./fediverse.png
+previewImage: ./fediverse.avif
 ---
 
 This blog post is a couple of thoughts on running a fediverse instance after growing one from a single user instance to a community of about 20 friends over a year and a half - a few things I think went well, what I could've done better, and a caution that it's not as easy as I originally thought it would be.
@@ -65,15 +65,15 @@ I'd also recommend being as transparent as you can about moderation decisions to
 
 ## Did my approach work?
 
-![Well, this has been the nicest place I've ever had the pleasure of inhabiting on the internet but it's time to migrate away. Thanks for running this place Autumn, it really did feel like home.](./positive-1.png)
+![Well, this has been the nicest place I've ever had the pleasure of inhabiting on the internet but it's time to migrate away. Thanks for running this place Autumn, it really did feel like home.](./positive-1.avif)
 
-![0w0.is is shutting down in 3 months. I've hopped instances quite a bit since joining fedi last November, but 0w0.is has been a very special place to me. For the first time I found somewhere out of anywhere that had a homely feel to it, where I felt comfortable to make any random noise that came to mind. The other beings here are amazing and I'm fortunate to have met all of them through here. Autumn has been the best admin I could ask for, always being vigilant, sensible, and understanding in all the drama that affected this place. She's cute and wholesome and adds all the emojis I ask for and she's super cute](./positive-2.png)
+![0w0.is is shutting down in 3 months. I've hopped instances quite a bit since joining fedi last November, but 0w0.is has been a very special place to me. For the first time I found somewhere out of anywhere that had a homely feel to it, where I felt comfortable to make any random noise that came to mind. The other beings here are amazing and I'm fortunate to have met all of them through here. Autumn has been the best admin I could ask for, always being vigilant, sensible, and understanding in all the drama that affected this place. She's cute and wholesome and adds all the emojis I ask for and she's super cute](./positive-2.avif)
 
-![0w0 is a community to me, and one of the most banging places on this Fediverse. Everyone who is and has been on here is righteously funny and amazing. This has been the coolest and cosiest place I have ever had the privelage of existing in, second only to being with my IRL friends. This is no small part due to the tireless work of Autumn. She is a wonderful person, a close friend, and one of my top sisters. But not only that, she is the pinnacle of being an admin. Autumn was responsible for creating this community and I applaud her totally. May she enjoy her break.](./positive-3.png)
+![0w0 is a community to me, and one of the most banging places on this Fediverse. Everyone who is and has been on here is righteously funny and amazing. This has been the coolest and cosiest place I have ever had the privelage of existing in, second only to being with my IRL friends. This is no small part due to the tireless work of Autumn. She is a wonderful person, a close friend, and one of my top sisters. But not only that, she is the pinnacle of being an admin. Autumn was responsible for creating this community and I applaud her totally. May she enjoy her break.](./positive-3.avif)
 
-![It has been a wonderful few months since I migrated. I am extremely thankful to the work Autumn has done on 0w0.is - while I've beebn one of the most recent creatures to join the instance, and even though I may not have interacted with everyone in here, I appreciate how cozy and frankly welcoming my time on here has been. I am understandably a bit sad seeing all of this go - but I am glad I can look back on every interaction I've had in a positive light.](./positive-4.png)
+![It has been a wonderful few months since I migrated. I am extremely thankful to the work Autumn has done on 0w0.is - while I've beebn one of the most recent creatures to join the instance, and even though I may not have interacted with everyone in here, I appreciate how cozy and frankly welcoming my time on here has been. I am understandably a bit sad seeing all of this go - but I am glad I can look back on every interaction I've had in a positive light.](./positive-4.avif)
 
-![0w0.is has been the comfiest online space I've ever been in. I dont just mean fedi instance - out of any internet community I've been a part of, 0w0.is has felt like the safest, nicest, coziest space I could've ever asked for. Autumn did an amazing job with handling this instance and I think every instance admin should aspire to get to the same level 0w0 was at. This instance felt so friendly and charming, Autumn harbored a really great community here. It's gonna be sad to see it go.](./positive-5.png)
+![0w0.is has been the comfiest online space I've ever been in. I dont just mean fedi instance - out of any internet community I've been a part of, 0w0.is has felt like the safest, nicest, coziest space I could've ever asked for. Autumn did an amazing job with handling this instance and I think every instance admin should aspire to get to the same level 0w0 was at. This instance felt so friendly and charming, Autumn harbored a really great community here. It's gonna be sad to see it go.](./positive-5.avif)
 
 Yes.
 

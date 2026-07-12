@@ -1,7 +1,7 @@
 ---
 title: 'GNSS "War Room"'
 description: A space-based PNT dashboard inspired by the movie WarGames
-previewImage: ./thumb.png
+previewImage: ./thumb.avif
 published: 2025-05-01
 ---
 
@@ -238,7 +238,7 @@ This architecture allows for more data sources, including possibly GNSS receiver
 
 MQTT was chosen as the protocol used for communication due to being built for a publish/subscribe architecture, and its lightweight nature. This also provides the benefit of being able to use an existing reliable MQTT broker, rather than attempting to implement a custom protocol and server using TCP or WebSockets, and missing edge cases or security considerations. Whilst this approach results in any new client subscribing not having access to previously published data, in the case of GNSS this is not required, as the whole current state of the system is given by the receiver each second.
 
-![](./dataflow.png)
+![](./dataflow.avif)
 
 _Note: Precision time signal and AIS have not yet been implemented by the deadline of this project (External delays in obtaining access to data), however it demonstrates how the architecture allows it to be easily extended in future._
 
@@ -248,7 +248,7 @@ For the web UI, the generated data and SVGs are saved to disk, so that they can 
 
 Below is an example configuration of the system in the Cyber lab. Note that although in this case the GNSS publisher and MQTT broker are both running on the same Raspberry Pi, they may also be run on separate computers connected via the internet. The GNSS publisher and MQTT broker correspond one-to-one with the above diagram as they are atomic (i.e. cannot be divided into further concepts), unlike the data processing engine/SVG rendering/Qt windows, which while separate logically, are all part of the same application on the desktop.
 
-![](./hardware.png)
+![](./hardware.avif)
 
 #### 3.2 Colour palette
 
@@ -343,19 +343,19 @@ To further reduce the risk of errors, the system is built to deal with invalid d
 
 The user interface was designed for each window to be readable at a glance, assuming the primary use-case of displaying data in the CPSL.
 
-![](ui-2.png)
+![](ui-2.avif)
 
 The world map displays where above the earth satellites are located. Satellites are coloured by which network they belong to, allowing easy differentiation between satellites
 
-![](ui-1.png)
+![](ui-1.avif)
 
 The polar grid displays where satellites are in the sky, from the point of view of the antenna.
 
-![](ui-3.png)
+![](ui-3.avif)
 
 The statistics menu displays various statistics in text form that are not better visualised in some better form, or should additionally be provided in text form. Data is grouped together to allow the desired data to be found more easily at a glance.
 
-![](ui-4.png)
+![](ui-4.avif)
 
 The signal quality graph displays signal to noise ratio for each satellite currently in view. Each satellite is labelled with its unique Pseudo-Random Noise (PRN) code.
 
@@ -658,7 +658,7 @@ Thanks to a pull request by Christian Clauss [^55], these tests are run every ti
 
 [^55]: C. Clauss, 'GitHub Actions: Test with pytest'. [Online]. Available: https://github.com/autumn-mck/gnss-war-room/pull/3
 
-![](pytest.png)
+![](pytest.avif)
 
 #### 5.2 Network Performance
 
@@ -673,7 +673,7 @@ For each, 10,000 sampled messages were sent sequentially. The code used for this
 
 ##### 5.2.1 Same computer
 
-![](sameComputer.png)
+![](sameComputer.avif)
 
 Median: 0.57ms  
 90th percentile: 0.73ms  
@@ -682,7 +682,7 @@ Median: 0.57ms
 
 ##### 5.2.2 Same network
 
-![](sameNetwork.png)
+![](sameNetwork.avif)
 
 Median: 25.14ms  
 90th percentile: 48.21ms  
@@ -691,7 +691,7 @@ Median: 25.14ms
 
 ##### 5.2.3 Different network
 
-![](differentNetwork.png)
+![](differentNetwork.avif)
 
 Median: 137.71ms  
 90th percentile: 156.00ms  
@@ -710,7 +710,7 @@ Although the messages sent over the internet incur significant latency, similarl
 
 To ensure the application continues to function under normal conditions for significant periods of time, the system has been left running whilst continually being fed live data for as long as possible. This was done using the already established least-favourable network connection of over the internet. The system was hosted online [^22] and monitored regularly to ensure continued functionality.
 
-![](./uptime.png)
+![](./uptime.avif)
 
 #### 5.4 Stress-testing
 
@@ -792,22 +792,22 @@ Despite its success, room still remains for further features to be added to the 
 
 <center><i id="displays">Below: The matrix of displays in the Cyber Lab</i></center>
 
-![](displays.jpg)
+![](displays.avif)
 
 <center><i id="running">Below: The system running in the Cyber Lab</i></center>
 
-![](pic.png)
+![](pic.avif)
 
 <center><i id="globe">Below: Screenshot of the web view, displaying the 3D globe</i></center>
 
-![](globe.png)
+![](globe.avif)
 
 <center><i id="badge">Below: replica ID badge made for project demo costume</i></center>
 
-![](badge.jpg)
+![](badge.avif)
 
 <center><i id="badge">Below: W.O.P.R. modified to display GNSS data (currently mean SNR)</i></center>
 
-![](wopr.jpg)
+![](wopr.avif)
 
 ### 8.0 References

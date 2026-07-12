@@ -103,7 +103,7 @@ The widget on my site's homepage that displays the music I'm currently listening
 
   <script src="https://music-display.mck.is/musicDisplayComponent.js" async is:inline></script>
 
-![Autumn's back again by northh](../blog/2024/small-projects-for-fun/autumns-back-again.png)
+![Autumn's back again by northh](../blog/2024/small-projects-for-fun/autumns-back-again.avif)
 
   </div>
 </div>
@@ -213,7 +213,7 @@ Still early in development, currently only supporting custom configuration scree
   </div>
   <div class="preview">
 
-![UI showing options for editing a Minecraft datapack](./imgs/dptoolkit.png)
+![UI showing options for editing a Minecraft datapack](./imgs/dptoolkit.avif)
 
   </div>
 </div>
@@ -230,7 +230,7 @@ In no way designed to replace the proper version - my only goal is to look cool 
   </div>
   <div class="preview">
 
-![Graphs from the LHC Synchrotron Light Monitor](./imgs/vistar.png)
+![Graphs from the LHC Synchrotron Light Monitor](./imgs/vistar.avif)
 
   </div>
 </div>
@@ -247,7 +247,7 @@ Most of the credit goes to Poul-Henning Kamp for [reverse engineering the HP1345
   </div>
   <div class="preview">
 
-![A strange game. The only winning move is not to play. How about a nice game of chess?](./imgs/wopr.png)
+![A strange game. The only winning move is not to play. How about a nice game of chess?](./imgs/wopr.avif)
 
   </div>
 </div>
@@ -284,7 +284,7 @@ Rather than using ActivityPub outboxes and pretending to be an instance, which [
   </div>
   <div class="preview">
 
-![Screenshot of code](./imgs/markov.png)
+![Screenshot of code](./imgs/markov.avif)
 
   </div>
 </div>
@@ -387,7 +387,7 @@ See my [blog post for CSC1028](/CSC1028/) for a lot more info.
   </div>
   <div class="preview mid-wide">
 
-![UI showing several data sources, including a SimilarWeb rank, DNS lookup, phishing/malware data, earliest archive date, and all subdomains](./imgs/1028.png)
+![UI showing several data sources, including a SimilarWeb rank, DNS lookup, phishing/malware data, earliest archive date, and all subdomains](./imgs/1028.avif)
 
   </div>
 </div>
@@ -405,7 +405,7 @@ It is possible! And you shouldn't do it, because again, databases exist.
 
   <div class="preview">
 
-![A log of some music tracks being played](imgs/music-log.png)
+![A log of some music tracks being played](imgs/music-log.avif)
 
   </div>
 </div>

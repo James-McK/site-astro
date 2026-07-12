@@ -3,7 +3,7 @@ title: How to deal with Project Sonar's data
 description: From the beginning
 published: 2022-02-01
 updated: 2022-03-04
-previewImage: ./bg-sonar.jpg
+previewImage: ./bg-sonar.avif
 id: project-sonar
 ---
 
@@ -111,7 +111,7 @@ async function listDatabases(client) {
 ```
 
 Call the new listDatabases function from within our main function, and pass it the MongoClient we created, after opening the client's connection. Running our code so far (with `node fetchData.js`) we should get something like this:
-![List of databases](./ListDatabases.png)
+![List of databases](./ListDatabases.avif)
 
 Your code so far should be similar to
 

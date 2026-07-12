@@ -3,7 +3,7 @@ title: MusicBee on Linux
 description: Wine is magic!
 published: 2024-01-26
 updated: 2026-03-22
-previewImage: ./discordbee.png
+previewImage: ./discordbee.avif
 tags:
   - musicbee
   - linux
@@ -34,7 +34,7 @@ Now we can download and run the MusicBee installer ourselves, but I was having f
 
 By looking at Firefox's network request inspector, it looks like the site first sends a request to `https://www.majorgeeks.com/index.php?ct=files&action=download&=`, which responds with a 302 (Moved temporarily) redirecting us to the actual download file. Cool! After a bit of experimentation, I was able to figure out that it figures out where to redirect us to based on the `PHPSESSID` cookie.
 
-![A list of GET requests, showing the one that fetches the file at the bottom](./redirect.png)
+![A list of GET requests, showing the one that fetches the file at the bottom](./redirect.avif)
 
 But how do we get that from the command line? Thankfully since this cookie is created and used by PHP on the server-side, we don't have to worry about running javascript or something. After some online searching and looking through cURL's manual page, it looks like the options we need are `-c` to save the cookies, and we can then use `-b` to load the file for our next request.
 
@@ -67,7 +67,7 @@ rm "./bass_aac.zip"
 
 And that's it! MusicBee now works.
 
-![Screenshot showing empty boxes being displayed in place of japanese characters](./broken_cjk.png)
+![Screenshot showing empty boxes being displayed in place of japanese characters](./broken_cjk.avif)
 
 Except of course not. One of the artists of an album I own uses japanese characters, which seems to be displayed as just boxes. Installing `cjkfonts` (fonts with chinese, japanese, and korean characters) with winetricks seems to _partially_ fix the issue - except places where the text is bolded, where it still just displays boxes. I've not been able to find a better solution yet unfortunately, although I only discovered this issue a few weeks ago, so I'm still searching.
 
@@ -160,7 +160,7 @@ EOL
 chmod +x ./launch.sh
 ```
 
-![Screenshot with a discord status showing the same track currently playing within MusicBee, with its album art and current progress](./discordbee.png)
+![Screenshot with a discord status showing the same track currently playing within MusicBee, with its album art and current progress](./discordbee.avif)
 
 ## Ok, we're finally done (for now)
 
@@ -170,6 +170,6 @@ I'm hardly the first person to do most of this stuff, but it was still a lot of 
 
 I've heard that even ripping CDs works, but given that [it's apparently not legal in the UK](https://www.bbc.co.uk/news/newsbeat-33566933), I of course would never do so myself.
 
-![Screenshot of the MusicBee CD ripping user interface](./cd.png)
+![Screenshot of the MusicBee CD ripping user interface](./cd.avif)
 
 Wine may not be an emulator, but as far as I'm concerned, it is magic.

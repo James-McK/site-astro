@@ -7,7 +7,7 @@ tags:
   - musicbee
   - javascript
   - programming
-previewImage: ./locals.png
+previewImage: ./locals.avif
 ---
 
 I recently had an idea for a project: I wonder if it's possible for me to display what music I'm currently listening to on my website?  
@@ -22,7 +22,7 @@ I recently had an idea for a project: I wonder if it's possible for me to displa
 
 Why? It sounded like a nice, short project, I think it's fun showing off what music I like, and I've had it displayed as my discord status for a while now, which gets friends talking about music!
 
-![hey i know that song](./hey-i-know-that-song.png)
+![hey i know that song](./hey-i-know-that-song.avif)
 
 So I started thinking over the minimum parts I'd need to get working:
 
@@ -137,9 +137,9 @@ seekBarPositionMarker.style.animation = `moveRight ${playingData.durationMs}ms l
 
 Perfect! With a bit of extra polish, the whole thing looks pretty good.
 
-![Autumn's Back Again by northh](./autumns-back-again.png)
+![Autumn's Back Again by northh](./autumns-back-again.avif)
 
-![movies for guys by Jane Remover](./movies-for-guys.png)
+![movies for guys by Jane Remover](./movies-for-guys.avif)
 
 I decided to try out CSS nesting for this, as of a couple months ago it's [supported in all major browsers](https://caniuse.com/css-nesting). Which helps keep the CSS a bit more organised and readable:
 
@@ -179,7 +179,7 @@ CSS variables are great! I don't see them used often enough.
 
 And then a bit more work after I realised it should probably look good when squished down on mobile too:
 
-![locals (girls like us) by Underscores](./locals.png)
+![locals (girls like us) by Underscores](./locals.avif)
 
 CSS Grid turned out to be a great help for this - I've never actually used it before, but now I have a decent understanding of how they work, and can't wait to use them more.
 
@@ -188,11 +188,11 @@ CSS Grid turned out to be a great help for this - I've never actually used it be
 As a side-note, I found a tiny odd difference between Firefox and Chromium. I was using an SVG for the pause button, and decided to use some css variables to define how rounded the corners should be (`rx="calc(var(--border-radius) / 2)"`).  
 Firefox logs a warning saying `Unexpected value` but still renders it the way I intended:
 
-![Firefox's pause button with rounded corners](./pause-firefox.png)
+![Firefox's pause button with rounded corners](./pause-firefox.avif)
 
 While Chromium logs an error and renders it with sharp corners:
 
-![Chromium's pause button with sharp corners](./pause-chromium.png)
+![Chromium's pause button with sharp corners](./pause-chromium.avif)
 
 I have no idea which one is "correct" (or if there even is an answer to that), but I found it odd since they both support CSS variables for the `fill` without any issues.
 

@@ -34,12 +34,12 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 #### Syntax
 
 ```markdown
-![A photo of a happy cow](./misc-imgs/happy-cow.jpg)
+![A photo of a happy cow](./misc-imgs/happy-cow.avif)
 ```
 
 #### Output
 
-![A photo of a happy cow](./misc-imgs/happy-cow.jpg)
+![A photo of a happy cow](./misc-imgs/happy-cow.avif)
 
 ## Blockquotes
 
