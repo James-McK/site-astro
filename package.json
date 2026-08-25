@@ -1,6 +1,7 @@
 {
 	"name": "site-astro",
 	"version": "2.1.5",
+	"packageManager": "pnpm@11.13.1",
 	"type": "module",
 	"scripts": {
 		"dev": "astro dev",
