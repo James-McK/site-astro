@@ -149,6 +149,24 @@ An experimental attempt to write my own frontend for [Akkoma](https://akkoma.soc
   </div>
 </div>
 
+
+<h2 id="0w0">Fediverse instance</h2>
+
+<div class="project even">
+  <div class="description">
+
+For a bit over two years, I administrated and ran a fediverse server ([Akkoma](https://akkoma.social/)) for about twenty people, perfoming monitoring, maintenance, patching issues, and working on making a cosy space
+
+  </div>
+
+  <div class="preview">
+
+![alt text](./imgs/fedi.png)
+
+  </div>
+</div>
+
+
 <h2 id="catppuccin-musicbee">Catppuccin MusicBee</h2>
 
 <div class="project even">

@@ -52,12 +52,12 @@ Viewing the source, there's already a couple of noticeable things:
 
 - There's almost no actual HTML to the page, essentially only a html tag and a script tag - no input field asking for the password
 - A function not seemingly defined anywhere (`hp_d01`) is being called
-- The script tags have a `LANGUAGE="JavaScript"` attribute, depricated in HTML 4.01 in 1999
+- The script tags have a `LANGUAGE="JavaScript"` attribute, deprecated in HTML 4.01 in 1999
 - All the javascript is obfuscated
 
 Interestingly, none of the "javascript deobfuscators" that I found online seem to have any idea what to do with it. Good news for us - that means we have the fun of figuring it out for ourselves!
 
-While we could use "Inspect" to view the state of the DOM after the javascript has run, but it's possible it could rewrite the DOM multiple times to hide something from it, so to make sure we should decode it ourselves. Running `console.log(unescape("%3C%53%43..."))` we get:
+While we could use "Inspect" to view the state of the DOM after the javascript has run, it's possible it could rewrite the DOM multiple times to hide something from it, so to make sure we should decode it ourselves. Running `console.log(unescape("%3C%53%43..."))` we get:
 
 ```html
 <script language="JavaScript">
@@ -228,4 +228,4 @@ for (let password of passwords) {
 }
 ```
 
-Checking all these passwords took less than 5 seconds, and is enough to get the secret message! With the assumptions made to get here, it's possible this approach wouldn't have worked, but I got lucky. If you want the message and password, this has given you everything to decode it!
+Checking all these passwords took less than 5 seconds, and is enough to get the secret message! With the assumptions made to get here, it's possible this approach wouldn't have worked, but I got lucky. If you want the message and password, this has given you everything to decode it! That bit's up to you :D

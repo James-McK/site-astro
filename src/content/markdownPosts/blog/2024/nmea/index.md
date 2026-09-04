@@ -46,7 +46,7 @@ with Serial(SERIAL_PORT, BAUDRATE) as stream:
 
 ## Never mind, I want a GUI
 
-On windows, I'd recommend [u-center 2](https://www.u-blox.com/en/product/u-center). On Linux, there seemingly aren't many good options (yet :3), but [PyGPSClient](https://github.com/semuconsulting/PyGPSClient) seems to work well.
+On windows, I'd recommend [u-center 2](https://www.u-blox.com/en/product/u-center). On Linux, there seemingly aren't many great options, but [PyGPSClient](https://github.com/semuconsulting/PyGPSClient) seems to work well.
 
 ## What does any of this stuff mean?
 
